@@ -21,4 +21,16 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  build: {
+    transpile: ['vue3-carousel']
+  },
+  runtimeConfig: {
+    apiSecret: '',
+    public: {
+      apiBase: '' || "https://api.gotoecuador.com/api",
+      // apiBaseTest: process.env.API_BASE_TEST || "https://app.gotolatam.travel/api",
+      apiBaseTest: ''
+      // apiBase: process.env.API_BASE_TEST || "http://localhost:8080/api",
+    }
+  },
 })

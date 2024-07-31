@@ -1,3 +1,5 @@
+import colors from "tailwindcss/colors.js";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -10,10 +12,19 @@ export default {
   ],
   theme: {
     extend: {},
-    // colors: {
-    //   primary: '#7D8506',
-    //   secondary: '#F9A825',
-    // },
+    colors: {
+      blue: colors.blue,
+      green: colors.green,
+      red: colors.red,
+      amber: colors.amber,
+      gray: colors.gray,
+      white: colors.white,
+      yellow: colors.yellow,
+      fuchsia: colors.fuchsia,
+      cyan: colors.cyan,
+      primary: '#7D8506',
+      secondary: '#F9A825',
+    },
     container: {
       center: true,
       // padding: '2rem',
