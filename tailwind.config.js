@@ -1,5 +1,5 @@
 import colors from "tailwindcss/colors.js";
-
+const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -9,10 +9,17 @@ export default {
     "./plugins/**/*.{js,ts}",
     "./app2.vue",
     "./error.vue",
+    "./node_modules/vue-tailwind-datepicker/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      // fontFamily: {
+      //   'sans': ['"Lora"', ...defaultTheme.fontFamily.sans],
+      // },
+    },
     colors: {
+      "vtd-primary": colors.sky, // Light mode Datepicker color
+      "vtd-secondary": colors.gray, // Dark mode Datepicker color
       blue: colors.blue,
       green: colors.green,
       red: colors.red,

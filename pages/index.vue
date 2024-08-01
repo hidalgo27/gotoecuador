@@ -6,7 +6,7 @@
         <iframe src="https://player.vimeo.com/video/381676880?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" frameborder="0" allow="autoplay; fullscreen" class=""></iframe>
       </div>
       <div class="absolute inset-x-0 mb-52 bottom-0 z-10 text-center">
-        <h2 class="text-white text-xl md:text-3xl container drop-shadow-[0_3px_6px_rgba(0,0,0,0.7)]">THE BEST VACATION IN <span class="text-primary">PERU</span> <span class="text-secondary">WITH THE BEST</span> PERUVIAN OPERATOR</h2>
+        <h2 class="text-white text-xl md:text-3xl container font-medium drop-shadow-[0_3px_6px_rgba(0,0,0,0.7)]">THE BEST VACATION IN <span class="text-primary">PERU</span> <span class="text-secondary">WITH THE BEST</span> PERUVIAN OPERATOR</h2>
 
         <!--        <InquireHome></InquireHome>-->
 
@@ -17,13 +17,13 @@
 
   <IconSlider></IconSlider>
 
-  <section class="px-6 container grid grid-cols-1 md:grid-cols-4 my-12">
-    <div class="text-center w-full col-span-4 items-center text-3xl text-secondary dark:text-secondary font-bold gap-2">
-      PERU TRAVEL PACKAGES
+  <section class="container grid grid-cols-1 md:grid-cols-4 my-12">
+    <div class="text-center w-full col-span-4 items-center text-4xl text-secondary font-semibold gap-2">
+      Peru Travel Packages
       <div class="border-4 h-1 w-12 border-primary mx-auto mt-3"></div>
 
     </div>
-    <div class="col-span-4 text-center mt-4">
+    <div class="col-span-4 text-center text-gray-800  mt-4">
       GOTOPERU is a family-owned company committed to offering the highest level of customer service possible. The personnel at GOTOPERU will ensure that you have an unforgettable vacation. Peru is one of the world's most diversified nations, boasting stunning old cultures and breathtaking natural beauty. Explore the world with GOTOPERU.
     </div>
   </section>
@@ -204,7 +204,7 @@
       </div>
     </div>
     <div class="bg-primary text-white dark:bg-gray-800 dark:bg-opacity-90  dark:text-gray-50 flex items-end">
-      <nuxt-img src="images/team/fiore.png" alt="" class="mx-auto"></nuxt-img>
+      <nuxt-img src="images/team/fiore.png" alt="" class="mx-auto w-3/5"></nuxt-img>
       <div class="text-center">
       </div>
     </div>

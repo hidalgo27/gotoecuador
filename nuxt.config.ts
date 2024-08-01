@@ -6,7 +6,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [// needed
-  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image"],
+  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt'],
+
+  googleFonts: {
+    families: {
+      Poppins: '200..700',  // Puedes especificar los pesos de las fuentes que necesites
+    }
+  },
 
   piniaPersistedstate: {
     storage: 'localStorage'
