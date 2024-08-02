@@ -5,6 +5,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      script: [ { src: 'https://cdn.wetravel.com/widgets/embed_checkout.js' } ]
+    }
+  },
+
   modules: [// needed
   '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt'],
 

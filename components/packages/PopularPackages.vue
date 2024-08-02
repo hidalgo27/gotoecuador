@@ -151,17 +151,11 @@
 
           </div>
 
-          <button v-if="packages.codigo_f" class="wtrvl-checkout_button btn-primary block w-full mb-2" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.2" data-uid="239346" data-uuid="" href="https://www.wetravel.com/checkout_embed?uuid=" >Book Now</button>
-          <a href="" class="btn-secondary block">View details</a>
+          <button v-if="packages.codigo_f" class="wtrvl-checkout_button btn-primary block w-full mb-2" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.2" data-uid="239346" :data-uuid="packages.codigo_f" :href="'https://www.wetravel.com/checkout_embed?uuid='+packages.codigo_f" >Book Now</button>
+          <a :href="'peru-travel-packages/'+packages.url" class="btn-secondary block" v-else>View details</a>
 
         </div>
 
-      </div>
-      <div class="">
-        sd
-      </div>
-      <div>
-        sf
       </div>
     </div>
 
