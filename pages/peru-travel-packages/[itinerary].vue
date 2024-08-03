@@ -147,185 +147,6 @@
 
             </article>
 
-            <!--        <div>
-                      <div>
-                        <h4>Itinerarios:</h4>
-                        <ul>
-                          &lt;!&ndash; Muestra solo los elementos hasta el índice en showCount[paquete.id] &ndash;&gt;
-                          <li v-for="itinerario in packages.paquete_itinerario.slice(0, showCount[packages.id])" :key="itinerario.id">
-                            {{ itinerario.itinerarios.titulo }}
-                          </li>
-                        </ul>
-                        &lt;!&ndash; Botón para expandir/colapsar &ndash;&gt;
-            &lt;!&ndash;            <button @click="toggleExpand(packages.id)">
-                          {{ showCount[packages.id] >= packages.paquete_itinerario.length ? 'Ver menos' : 'Ver más' }}
-                        </button>&ndash;&gt;
-
-                        <button @click="expand(packages.id)" v-if="showCount[packages.id] < packages.paquete_itinerario.length">
-                          Ver más
-                        </button>
-                        &lt;!&ndash; Botón para contraer &ndash;&gt;
-                        <button @click="contract(packages.id)" v-if="showCount[packages.id] > 2">
-                          Ver menos
-                        </button>
-                      </div>
-                    </div>-->
-
-            <article id="included">
-              <h2 class="text-2xl font-bold mb-8">Our Rates includes</h2>
-              <div v-html="packages.incluye"></div>
-              <!--          <div class="grid grid-cols-4 gap-6">-->
-              <!--            <div class="rounded-2xl p-4 bg-slate-100 text-gray-800 hover:bg-primary hover:text-white">-->
-              <!--              <img src="/icons/star.svg" alt="" class="mb-3 w-6">-->
-              <!--              <p class="text-sm">Private transport Airport - Hotel</p>-->
-              <!--            </div>-->
-              <!--            <div class="rounded-2xl p-4 bg-slate-100 text-gray-800 hover:bg-primary hover:text-white">-->
-              <!--              <img src="/icons/star.svg" alt="" class="mb-3 w-6">-->
-              <!--              <p class="text-sm">Profesional <br> Guides</p>-->
-              <!--            </div>-->
-              <!--            <div class="rounded-2xl p-4 bg-slate-100 text-gray-800 hover:bg-primary hover:text-white">-->
-              <!--              <img src="/icons/star.svg" alt="" class="mb-3 w-6">-->
-              <!--              <p class="text-sm">Train Ollantaytambo - Machupicchu</p>-->
-              <!--            </div>-->
-              <!--            <div class="rounded-2xl p-4 bg-slate-100 text-gray-800 hover:bg-primary hover:text-white">-->
-              <!--              <img src="/icons/star.svg" alt="" class="mb-3 w-6">-->
-              <!--              <p class="text-sm">Helpline 24 hours a day, 7 days a week</p>-->
-              <!--            </div>-->
-              <!--            <div class="rounded-2xl p-4 bg-slate-100 text-gray-800 hover:bg-primary hover:text-white">-->
-              <!--              <img src="/icons/star.svg" alt="" class="mb-3 w-6">-->
-              <!--              <p class="text-sm">All The Entrances & Tours</p>-->
-              <!--            </div>-->
-              <!--            <div class="rounded-2xl p-4 bg-slate-100 text-gray-800 hover:bg-primary hover:text-white">-->
-              <!--              <img src="/icons/star.svg" alt="" class="mb-3 w-6">-->
-              <!--              <p class="text-sm">41 Nights With 3 Stars hotel</p>-->
-              <!--            </div>-->
-              <!--            <div class="rounded-2xl p-4 bg-slate-100 text-gray-800 hover:bg-primary hover:text-white">-->
-              <!--              <img src="/icons/star.svg" alt="" class="mb-3 w-6">-->
-              <!--              <p class="text-sm">Meals As Per Program</p>-->
-              <!--            </div>-->
-              <!--            <div class="rounded-2xl p-4 bg-slate-100 text-gray-800 hover:bg-primary hover:text-white">-->
-              <!--              <img src="/icons/star.svg" alt="" class="mb-3 w-6">-->
-              <!--              <p class="text-sm">Train Service</p>-->
-              <!--            </div>-->
-              <!--          </div>-->
-            </article>
-
-            <article class="my-12">
-              <h2 class="text-2xl font-bold mb-8">Not Included</h2>
-              <div v-html="packages.noincluye"></div>
-              <!--<ul class="list-inside list-image-[url(/icons/star.svg)]">
-                <li>National & International Flights</li>
-                <li>Travel Insurance</li>
-                <li>Visas</li>
-                <li>Tips</li>
-              </ul>-->
-            </article>
-
-            <article class="my-12 hidden">
-              <h2 class="text-2xl font-bold mb-8">Hotels considered</h2>
-              <div class="flex justify-between">
-                <div class="flex items-center gap-2">
-                  <img src="/icons/hotel.svg" alt=""> Overnight
-                </div>
-                <div class="flex gap-2 items-center">
-                  Category:
-                  <div class="relative col-span-2">
-                    <input type="text" class="is-input-ico rounded-right-0 border-right-0 peer" placeholder=" " @focus="openPopover(1)" @blur="closePopover(1)">
-                    <label class="is-input-ico-label">Choose Category</label>
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                      <img src="/icons/search.svg" alt="">
-                    </div>
-                    <div class="absolute z-10 inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                      </svg>
-                    </div>
-                    <transition name="top" appear>
-                      <div class="box-option-select" v-show="viewPopover == 1" @mouseover="mouseIsOverPopover = true" @mouseleave="mouseIsOverPopover = false">
-                        <div class="grid items-start text-left">
-                          <div class="py-2 px-3 hover:bg-secondary hover:text-white cursor-pointer flex gap-2">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                          </div>
-                          <div class="py-2 px-3 hover:bg-secondary hover:text-white cursor-pointer flex gap-2">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                          </div>
-                          <div class="py-2 px-3 hover:bg-secondary hover:text-white cursor-pointer flex gap-2">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                          </div>
-                          <div class="py-2 px-3 hover:bg-secondary hover:text-white cursor-pointer flex gap-2">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                            <img src="/icons/star.svg" alt="">
-                          </div>
-                        </div>
-                      </div>
-                    </transition>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="hidden" id="price2s">
-              <div class="grid grid-cols-12 bg-gray-800 rounded-t-xl py-3 text-white divide-x items-center">
-                <div class="col-span-2 text-center pl-6">
-                  Nights
-                </div>
-                <div class="col-span-4 pl-6">
-                  <div>
-                    City
-                  </div>
-                </div>
-                <div class="col-span-6 pl-6">
-                  <div>
-                    Hotel
-                  </div>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-12 py-2 bg-slate-100 divide-x divide-slate-300 items-center my-2">
-                <div class="col-span-2 pl-6 leading-none text-primary text-center">
-                  <span class="text-xs">Nights</span><br>
-                  <span class="text-2xl font-bold">04</span>
-                </div>
-                <div class="col-span-4 pl-6">
-                  Quito
-                </div>
-                <div class="col-span-6 pl-6">
-                  Vieja Cuba
-                </div>
-              </div>
-
-              <div class="grid grid-cols-12 py-2 bg-slate-100 divide-x divide-slate-300 items-center my-2">
-                <div class="col-span-2 pl-6 leading-none text-primary text-center">
-                  <span class="text-xs">Nights</span><br>
-                  <span class="text-2xl font-bold">04</span>
-                </div>
-                <div class="col-span-4 pl-6">
-                  Quito
-                </div>
-                <div class="col-span-6 pl-6">
-                  Vieja Cuba
-                </div>
-              </div>
-
-              <button @click="loadMore" v-if="canLoadMore" class=" p-4 bg-[#eff2d6] font-bold text-primary rounded w-full hover:bg-primary hover:text-white">
-                View More
-              </button>
-
-              <button @click="loadLess" v-if="canLoadLess" class="px-4 py-2 w-full mt-2 rounded text-gray-400 hover:text-primary">
-                View Less
-              </button>
-
-            </article>
-
 
           </div>
           <div class="md:col-span-3 -mt-32 z-10">
@@ -509,6 +330,54 @@
 <!--              <div id="TA_cdsratingsonlynarrow522" class="TA_cdsratingsonlynarrow w-full"><ul id="8CdJuXhFL" class="TA_links ZrzN0Ffd"><li id="7JQHh6DaTf" class="SOH6nHQUMt"><a target="_blank" href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d15202262-Reviews-Gotoperu-Cusco_Cusco_Region.html"><img src="https://www.tripadvisor.com.pe/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_secondary_registered-18034-2.svg" class="mx-auto" alt="TripAdvisor"/></a></li></ul></div>-->
 <!--              <script async src="https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&amp;uniq=522&amp;locationId=15202262&amp;lang=es_PE&amp;border=true&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>-->
 <!--            </div>-->
+          </div>
+        </div>
+      </section>
+
+      <section class="container ">
+        <div class="flex mb-3 items-center text-2xl text-gray-700 font-bold gap-2 dark:text-gray-400">
+          <div class="">
+            <span class="inline-block w-5 h-2.5 bg-secondary"></span>
+          </div> Included
+        </div>
+        <div class="grid grid-cols-6 gap-4">
+          <div class="col-start-2 col-span-4">
+            <div class="grid grid-cols-3 md:grid-cols-8 content-center text-center">
+              <div class="">
+                <img src="/images/include/assistances.png" alt="" class="object-contain px-4 text-center">
+                <p class="text-xs">Assistances</p>
+              </div>
+              <div class="">
+                <img src="/images/include/breakfast.png" alt="" class="object-contain px-4 text-center">
+                <p class="text-xs">Breakfast</p>
+              </div>
+              <div class="">
+                <img src="/images/include/entrances.png" alt="" class="object-contain px-4 text-center">
+                <p class="text-xs">Entrances</p>
+              </div>
+
+              <div class="">
+                <img src="/images/include/hotels.png" alt="" class="object-contain px-4 text-center">
+                <p class="text-xs">Hotels</p>
+              </div>
+              <div class="">
+                <img src="/images/include/tours.png" alt="" class="object-contain px-4 text-center">
+                <p class="text-xs">Tours</p>
+              </div>
+              <div class="">
+                <img src="/images/include/trains.png" alt="" class="object-contain px-4 text-center">
+                <p class="text-xs">Trains</p>
+              </div>
+              <div class="">
+                <img src="/images/include/transfers.png" alt="" class="object-contain px-4 text-center">
+                <p class="text-xs">Transfers</p>
+              </div>
+
+              <div class="">
+                <img src="/images/include/flight.png" alt="" class="object-contain px-4 grayscale text-center">
+                <p class="text-xs">Flight</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

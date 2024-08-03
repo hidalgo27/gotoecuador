@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      Poppins: '200..700',  // Puedes especificar los pesos de las fuentes que necesites
+      Poppins: true,  // Puedes especificar los pesos de las fuentes que necesites
     }
   },
 
