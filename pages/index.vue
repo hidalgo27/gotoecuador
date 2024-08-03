@@ -17,7 +17,7 @@
 
   <div class="relative w-full h-[75vh] overflow-hidden">
     <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
-      <source src="/videos/banner.mp4" type="video/mp4" />
+      <source src="/videos/banner2.mp4" type="video/mp4" />
       Tu navegador no soporta el video en HTML5.
     </video>
     <div class="relative z-10 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
