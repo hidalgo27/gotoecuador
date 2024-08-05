@@ -14,9 +14,6 @@
 <script setup lang="ts">
 import {usePackageStore} from "~/stores/packages";
 
-useHead({
-  script: [ { src: 'https://cdn.wetravel.com/widgets/embed_checkout.js' } ]
-})
 
 const targetButton = ref<HTMLButtonElement | null>(null);
 
@@ -32,6 +29,23 @@ watch(() => packageStore.code_w, async (newVal, oldVal) => {
     await nextTick();
     targetButton.value.click();
   }
+});
+
+const initializeWeTravelWidget = () => {
+  const widget = document.getElementById('wetravel_button_widget');
+  if (widget) {
+    // Forzar la re-inicialización del widget
+    widget.removeAttribute('data-initialized');
+    // Verificar y llamar la función de inicialización del script
+    if (typeof WeTravel !== 'undefined' && typeof WeTravel.initWidget === 'function') {
+      WeTravel.initWidget();
+    }
+  }
+};
+
+// Cargar el script cuando el componente se monta
+onMounted(() => {
+  initializeWeTravelWidget();
 });
 
 </script>
