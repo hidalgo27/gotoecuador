@@ -5,7 +5,7 @@
     @apply rounded-md py-3 px-5 md:px-10 text-white bg-secondary hover:bg-opacity-95 duration-300
 }
 .btn-ternary{
-    @apply rounded-md py-3 px-5 md:px-10 text-white bg-gray-800 hover:bg-opacity-95 duration-300
+    @apply rounded-md py-3 px-5 md:px-10 text-white bg-gray-500 hover:bg-opacity-95 duration-300
 }
 .btn-secondary-sm{
     @apply rounded-md py-1.5 px-5 text-white bg-secondary hover:bg-opacity-95 duration-300

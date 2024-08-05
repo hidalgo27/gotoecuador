@@ -136,7 +136,7 @@
     </div>
   </section>
 
-  <PopularPackages></PopularPackages>
+  <PopularPackages :listPackages="listPackages"></PopularPackages>
 
   <section class="container mt-12">
     <div class="flex mb-3 sm:mt-0 items-center text-2xl text-gray-700 dark:text-secondary mt-12 font-bold gap-2  md:flex">
@@ -255,5 +255,21 @@
 <script setup lang="ts">
 
 import IconSlider from "~/components/page/home/IconSlider.vue";
+
+import {usePackageStore} from "~/stores/packages";
 import PopularPackages from "~/components/packages/PopularPackages.vue";
+
+const packageStore = usePackageStore()
+
+const listPackages = ref([])
+
+const getPackage = async () => {
+  const res:any = await packageStore.getPackageTop()
+  listPackages.value = res
+}
+
+onMounted(async () => {
+  await getPackage()
+})
+
 </script>

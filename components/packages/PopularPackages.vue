@@ -1,55 +1,17 @@
 <template>
   <div>
-  <div class="container hidden">
-    <div class="grid grid-cols-7">
-      <div class="col-span-7 md:col-span-7">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <a :href="'/peru-travel-packages/'+packages.url" class="p-3 bg-white col-span-1 w-full rounded-xl my-2 block shadow-md cursor-pointer" v-for="packages in listPackages" :key="packages.id">
-            <div class="relative">
-              <img :src="packages.imagen" alt="" class="w-full rounded-lg">
-              <div class="absolute inset-0 bg-gradient-to-t to-70% from-gray-900 from-0% opacity-40"></div>
-            </div>
-            <div class="">
-              <h3 class="text-left text-lg font-semibold my-3">{{ packages.titulo }}</h3>
-              <div class="flex text-xs font-semibold gap-1 items-center">
-                <template v-for="(des, index) in packages.paquetes_destinos">
-                  {{des.destinos.nombre}}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-orange-400" v-if="index < packages.paquetes_destinos.length - 1">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                  </svg>
 
-                </template>
-              </div>
-              <div class="flex gap-2 mt-3 text-sm">
-<!--                <img src="/icons/map-location.svg" alt=""> Starting Airport <span class="text-primary font-semibold">{{ packages.codigo_vuelo }}</span>-->
-              </div>
-              <div class="border my-4"></div>
-              <div class="flex justify-between text-lg font-semibold">
-                <div>{{ packages.duracion }} days</div>
-                <div v-if="getThreeStarPrice(packages.precio_paquetes) > 0">
-                  <span class="text-xs text-gray-400">From</span> ${{ getThreeStarPrice(packages.precio_paquetes) }}
-                </div>
-                <div v-else>
-                  <sup class="italic light text-xs">Price </sup>Inquire
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="container">
     <div class="grid grid-cols-3 gap-6">
-      <div class="group" v-for="packages in listPackages" :key="packages.id">
+      <div class="group border  block hover:shadow rounded-2xl overflow-hidden text-center transition duration-500" v-for="(packages, index) in listPackages" :key="index">
         <div class="overflow-hidden relative">
           <div class="relative">
-            <img :src="packages.imagen" :alt="packages.titulo" class="object-cover h-96 w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"/>
+            <img :src="packages.imagen" :alt="packages.titulo" class="object-cover rounded-t-2xl h-96 w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"/>
             <div class="absolute inset-0 gradient-cicle-gray"></div>
           </div>
           <div class="absolute inset-x-0 bottom-0 w-full p-6">
-            <div class="bg-primary bg-opacity-95 p-4 text-gray-50 group-hover:bg-opacity-100 transition duration-500 rounded-lg shadow-xl">
-              <h2 class="text-xl font-bold">{{ packages.titulo }}</h2>
+            <div class="bg-primary bg-opacity-70 text-left p-4 text-gray-50 group-hover:bg-opacity-100 transition duration-500 rounded-lg shadow-xl">
+              <h2 class="text-lg font-bold">{{ packages.titulo }}</h2>
               <div class="flex text-xs font-semibold gap-1 items-center">
                 <template v-for="(des, index) in packages.paquetes_destinos">
                   {{des.destinos.nombre}}
@@ -64,7 +26,7 @@
           </div>
         </div>
 
-        <div class="border p-6 block group-hover:border-primary text-center transition duration-500">
+        <div class="p-6">
           <div class="flex -space-x-1 justify-center mb-2">
             <div class="inline-block rounded-full ring-1 m-1 ring-white relative">
               <VTooltip>
@@ -151,8 +113,11 @@
 
           </div>
 
-          <button v-if="packages.codigo_f" class="wtrvl-checkout_button btn-primary block w-full mb-2" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.2" data-uid="239346" :data-uuid="packages.codigo_f" :href="'https://www.wetravel.com/checkout_embed?uuid='+packages.codigo_f" >Book Now</button>
-          <a :href="'peru-travel-packages/'+packages.url" class="btn-secondary block" v-else>View details</a>
+<!--          <button v-if="packages.codigo_f" class="wtrvl-checkout_button btn-primary block w-full mb-2" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.2" data-uid="239346" :data-uuid="packages.codigo_f" :href="'https://www.wetravel.com/checkout_embed?uuid='+packages.codigo_f" >Book Now</button>-->
+          <button v-show="packages.codigo_f" @click="pack(packages.codigo_f)" class="wtrvl-checkout_button btn-ternary mb-2 block w-full" id="wetravel_button_widget">Book Now</button>
+          <nuxt-link  :to="'peru-travel-packages/'+packages.url" class="btn-secondary block">View details</nuxt-link>
+
+
 
         </div>
 
@@ -170,22 +135,48 @@ import {usePackageStore} from "~/stores/packages";
 
 const packageStore = usePackageStore()
 
-const listPackages = ref([])
 
-const getPackage = async () => {
-  const res:any = await packageStore.getPackageTop()
+const pack = (packages:string) => {
+  console.log(packages)
+  packageStore.code_w = packages
+};
 
-  console.log(res)
-  listPackages.value = res
+// const listPackages = ref([])
 
-}
+// const getPackage = async () => {
+//   const res:any = await packageStore.getPackageTop()
+//
+//   console.log(res)
+//   listPackages.value = res
+//
+// }
+
+// interface listPackages{
+//   duracion:any, imagen:any, paquetes_destinos:any, precio_paquetes:any, titulo:any, url:any, is_p_t:any, precio_tours:any, codigo_f:any
+// }
 
 const getThreeStarPrice = (arr:any) => {
   const price = arr.find((priceInfo: { estrellas: number; }) => priceInfo.estrellas === 3);
   return price ? price.precio_d : 'No disponible';
 }
 
-onMounted(async () => {
-  await getPackage()
-})
+// const props = defineProps({
+//   listPackages: {
+//     type: Array,
+//   }
+// });
+// defineProps({
+//   listPackages: listPackages[]
+// })
+
+// defineProps<{
+//   listPackages: listPackages[]
+// }>();
+
+const props = defineProps<{
+  listPackages: Array<{ url: string, [key: string]: any }>
+}>();
+
+
+
 </script>
