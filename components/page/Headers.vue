@@ -20,12 +20,12 @@
     </div>
     <div class="bg-gray-50">
       <nav class="container flex justify-center text-center">
-        <nuxt-link to="/peru-travel-packages" class="menu-list active">Peru Travel Packages</nuxt-link>
-        <nuxt-link to="/destinations/peru" class="menu-list">Destinations</nuxt-link>
-        <nuxt-link to="/hotel" class="menu-list">hotel</nuxt-link>
+        <nuxt-link to="/ecuador-travel-packages" class="menu-list active">Peru Travel Packages</nuxt-link>
+        <nuxt-link to="/destinations" class="menu-list">Destinations</nuxt-link>
+        <nuxt-link to="/hotels" class="menu-list">hotel</nuxt-link>
         <!--      <nuxt-link to="/#top-12" class="flex gap-2 items-center"><img src="/icons/star.svg"> Top tours</nuxt-link>-->
         <!--      <nuxt-link to="/reviews" class="flex gap-2 items-center"><img src="/icons/search.svg"> Reviews</nuxt-link>-->
-        <nuxt-link to="/about" class="menu-list">About us</nuxt-link>
+        <nuxt-link to="/about-us" class="menu-list">About us</nuxt-link>
         <nuxt-link to="/review" class="menu-list">Reviews</nuxt-link>
 
       </nav>

@@ -10,7 +10,7 @@
 <!--  <div class="">-->
 <!--    <nav class="gap-6 hidden md:flex justify-end">-->
 <!--      <nuxt-link to="/destinations/peru" class="flex gap-2 items-center">Destinations</nuxt-link>-->
-<!--      <nuxt-link to="/peru-travel-packages" class="flex gap-2 items-center">Peru Travel Packages</nuxt-link>-->
+<!--      <nuxt-link to="/ecuador-travel-packages" class="flex gap-2 items-center">Peru Travel Packages</nuxt-link>-->
 <!--      &lt;!&ndash;      <nuxt-link to="/#top-12" class="flex gap-2 items-center"><img src="/icons/star.svg"> Top tours</nuxt-link>&ndash;&gt;-->
 <!--      &lt;!&ndash;      <nuxt-link to="/reviews" class="flex gap-2 items-center"><img src="/icons/search.svg"> Reviews</nuxt-link>&ndash;&gt;-->
 <!--      <nuxt-link to="/about" class="flex gap-2 items-center">About us</nuxt-link>-->
