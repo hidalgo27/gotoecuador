@@ -1,29 +1,29 @@
 <template>
-<!--  <section>-->
-<!--    <div class="relative">-->
-<!--      <div class="h-[75vh] relative overflow-hidden vimeo-wrapper ">-->
-<!--        <div class="absolute bg-gradient-to-r from-gray-800 h-[75vh] opacity-20 z-10 inset-0"></div>-->
-<!--        <iframe src="https://player.vimeo.com/video/381676880?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" frameborder="0" allow="autoplay; fullscreen" class=""></iframe>-->
-<!--      </div>-->
-<!--      <div class="absolute inset-x-0 mb-52 bottom-0 z-10 text-center">-->
-<!--        <h2 class="text-white text-xl md:text-3xl container font-medium drop-shadow-[0_3px_6px_rgba(0,0,0,0.7)]">THE BEST VACATION IN <span class="text-primary">PERU</span> <span class="text-secondary">WITH THE BEST</span> PERUVIAN OPERATOR</h2>-->
+  <section>
+    <div class="relative">
+      <div class="h-[75vh] relative overflow-hidden vimeo-wrapper ">
+        <div class="absolute bg-gradient-to-t from-gray-800 h-[75vh] opacity-20 z-10 inset-0"></div>
+        <iframe src="https://player.vimeo.com/video/996360304?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" frameborder="0" allow="autoplay; fullscreen" class=""></iframe>
+      </div>
+      <div class="absolute inset-x-0 mb-52 bottom-0 z-10 text-center">
+        <h2 class="text-white text-xl md:text-3xl container font-medium drop-shadow-[0_3px_6px_rgba(0,0,0,0.7)]">THE BEST VACATION IN <span class="text-primary">PERU</span> <span class="text-secondary">WITH THE BEST</span> PERUVIAN OPERATOR</h2>
 
-<!--        &lt;!&ndash;        <InquireHome></InquireHome>&ndash;&gt;-->
+        <!--        <InquireHome></InquireHome>-->
 
-<!--      </div>-->
+      </div>
 <!--      <div class="absolute inset-0 bg-gradient-to-t to-70% from-gray-900 from-0% opacity-50"></div>-->
-<!--    </div>-->
-<!--  </section>-->
-
-  <div class="relative w-full h-[75vh] overflow-hidden">
-    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
-      <source src="/videos/banner4.mp4" type="video/mp4" />
-      Tu navegador no soporta el video en HTML5.
-    </video>
-    <div class="relative z-10 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-      <h2 class="text-white text-xl md:text-3xl container font-medium ">THE BEST VACATION IN <span class="text-primary">PERU</span> <span class="text-secondary">WITH THE BEST</span> PERUVIAN OPERATOR</h2>
     </div>
-  </div>
+  </section>
+
+<!--  <div class="relative w-full h-[75vh] overflow-hidden">-->
+<!--    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">-->
+<!--      <source src="/videos/banner.mov" type="video/mp4" />-->
+<!--      Tu navegador no soporta el video en HTML5.-->
+<!--    </video>-->
+<!--    <div class="relative z-10 flex items-center justify-center w-full h-full text-center bg-black bg-opacity-50">-->
+<!--      <h2 class="text-white text-xl md:text-3xl container font-medium ">THE BEST VACATION IN <span class="text-primary">PERU</span> <span class="text-secondary">WITH THE BEST</span> PERUVIAN OPERATOR</h2>-->
+<!--    </div>-->
+<!--  </div>-->
 
   <IconSlider></IconSlider>
 

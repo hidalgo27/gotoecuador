@@ -1,11 +1,14 @@
 <template>
   <div>
 
-    <section class="h-[60vh] -z-1 relative overflow-hidden">
-      <img src="/images/banners/machu-picchu-full-day.jpg" alt="" class="h-[60vh] w-full object-cover object-center">
-      <div class="absolute w-full bottom-0  p-12">
+    <section class="h-[75vh] 2xl:h-[60vh] relative">
+      <nuxt-img src="/images/banners/machu-picchu-full-day.jpg" alt="" class="object-cover w-screen h-full"></nuxt-img>
+
+      <div class="absolute inset-x-0 bottom-0">
         <div class="container">
-          <h1 class="text-4xl py-6 font-semibold text-gray-50">Ecuador Travel Packages</h1>
+          <h1 class="text-4xl py-6 font-semibold text-gray-50">
+            Ecuador Travel Packages
+          </h1>
         </div>
       </div>
     </section>

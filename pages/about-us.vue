@@ -1,11 +1,13 @@
 <template>
-  <header class="h-[75vh] relative">
+  <header class="h-[75vh] 2xl:h-[60vh] relative">
     <img src="https://gotoperu.com/images/team/banner2.jpg" alt="" class="object-cover w-screen h-full">
-    <!--    <div class="absolute inset-x-0 bottom-0 text-center">-->
-    <!--      <h1 class="mb-24 font-bold text-6xl text-white">-->
-    <!--        about-->
-    <!--      </h1>-->
-    <!--    </div>-->
+    <div class="absolute inset-x-0 bottom-0">
+      <div class="container">
+        <h1 class="text-4xl py-6 font-semibold text-gray-50">
+          About Us
+        </h1>
+      </div>
+    </div>
   </header>
 
   <section class="my-12 container">
@@ -21,8 +23,8 @@
 
 
         <article>
-          <h2 class="text-3xl font-bold mb-6">About Gotolatam Team</h2>
-          <p class="mb-3">We are more than just a travel platform. Our Gotolatam family has a great knowledge of customized tours in Latin America. With a deep passion for exploration, cultural exchange, and responsible tourism, we have embarked on a journey to generate unforgettable experiences that transcend borders and leave a positive impact.</p>
+          <h2 class="text-3xl font-bold mb-6">About GotoEcuador Team</h2>
+          <p class="mb-3">We are more than just a travel platform. Our GotoEcuador family has a great knowledge of customized tours in Latin America. With a deep passion for exploration, cultural exchange, and responsible tourism, we have embarked on a journey to generate unforgettable experiences that transcend borders and leave a positive impact.</p>
           <p class="mb-3">What distinguishes us is our deep commitment to creating customized itineraries that respond to your particular interests and desires. Whether you're an adventure seeker, a history enthusiast, a culinary explorer, or simply looking to unwind in breathtaking landscapes, our experienced travel experts design tailor-made journeys that reflect your spirit of adventure.</p>
         </article>
       </div>
@@ -37,7 +39,7 @@
         </svg>
         <h3 class="my-6 font-semibold">VALUES</h3>
         <hr class="my-6">
-        <p>In the Gotolatam Family, the core values that guide us in all our trips are passion for travel, innovation, customer orientation, trust, safety, communication, and quality of service.</p>
+        <p>In the GotoEcuador Family, the core values that guide us in all our trips are passion for travel, innovation, customer orientation, trust, safety, communication, and quality of service.</p>
       </article>
       <article class="text-center bg-white px-6 py-12 rounded-xl">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-primary mx-auto">
@@ -46,7 +48,7 @@
 
         <h3 class="my-6 font-semibold">CERTIFICATIONS</h3>
         <hr class="my-6">
-        <p>Gotolatam is certified by the Ministry of Foreign Trade and Tourism, and the National Tourism Control Organisms, as well as by various tourist reservation and review platforms such as Trip Advisor and Trustpilot.</p>
+        <p>GotoEcuador is certified by the Ministry of Foreign Trade and Tourism, and the National Tourism Control Organisms, as well as by various tourist reservation and review platforms such as Trip Advisor and Trustpilot.</p>
       </article>
       <article class="text-center bg-white px-6 py-12 rounded-xl">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-primary mx-auto">
@@ -55,7 +57,7 @@
 
         <h3 class="my-6 font-semibold">COMMITMENT</h3>
         <hr class="my-6">
-        <p>At Gotolatam, our commitment goes beyond just creating an ideal plan for you. Our family wants you to create a bond with each place you visit, so you can have the trip of your dreams.</p>
+        <p>At GotoEcuador, our commitment goes beyond just creating an ideal plan for you. Our family wants you to create a bond with each place you visit, so you can have the trip of your dreams.</p>
       </article>
     </div>
   </section>
@@ -68,7 +70,7 @@
     <div class="container grid md:grid-cols-12 py-12 gap-12 items-center">
       <div class="md:col-span-3">
         <h2 class="text-3xl font-bold">Social Media <br>& Reviews</h2>
-        <p class="my-6">At the Gotolatam family, we value the comments and feedback of all our travelers. Follow us on our social networks and digital platforms so you don't miss out on our latest news about LATAM destinations.</p>
+        <p class="my-6">At the GotoEcuador family, we value the comments and feedback of all our travelers. Follow us on our social networks and digital platforms so you don't miss out on our latest news about LATAM destinations.</p>
       </div>
       <div class="md:col-span-9 gap-6 grid md:grid-cols-4">
         <article class="text-center px-6 py-12 border rounded-xl">
