@@ -1,6 +1,6 @@
 <template>
   <header class="h-[75vh] 2xl:h-[60vh] relative">
-    <img src="https://gotoperu.com/images/team/banner2.jpg" alt="" class="object-cover w-screen h-full">
+    <nuxt-img src="https://gotoperu.com/images/team/banner2.avif" alt="" class="object-cover w-screen h-full"></nuxt-img>
     <div class="absolute inset-x-0 bottom-0">
       <div class="container">
         <h1 class="text-4xl py-6 font-semibold text-gray-50">
