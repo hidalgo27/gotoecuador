@@ -55,7 +55,7 @@ export const usePackageStore = defineStore('PackageStore', () => {
 
 		return new Promise(async (resolve, reject) => {
 			try {
-				const res = await fetch(config.public.apiBase + "/latam-travel-packages/"+url, {
+				const res = await fetch(config.public.apiBase + "/ecuador-travel-packages/"+url, {
 					method: 'GET',
 					headers: headers,
 				})
