@@ -3,7 +3,7 @@
     <div class="shadow">
       <div class="container flex justify-between py-6 items-center">
         <div class="flex items-center gap-4">
-          <nuxt-link to="/"><nuxt-img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-black.png" class="w-[150px] md:w-[240px]"></nuxt-img></nuxt-link>
+          <nuxt-link to="/"><nuxt-img src="/images/logos/logo-gotoecuador.svg" class="w-[150px] md:w-[260px]"></nuxt-img></nuxt-link>
           <Typing></Typing>
         </div>
         <div class="md:hidden">

@@ -2,7 +2,7 @@
   <div>
 
     <section class="h-[75vh] 2xl:h-[60vh] relative">
-      <nuxt-img src="/images/banners/machu-picchu-full-day.avif" alt="" class="object-cover w-screen h-full"></nuxt-img>
+      <nuxt-img src="/images/banners/machu-picchu-full-day.avif" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-screen h-full"></nuxt-img>
 
       <div class="absolute inset-x-0 bottom-0">
         <div class="container">
