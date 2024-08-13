@@ -45,7 +45,7 @@
       </div>
 
       <div class="w-full">
-        <a href="#" class="btn-secondary block text-center mt-2">View All</a>
+        <nuxt-link :href="'/destinations/'+destination.url" class="btn-secondary block text-center mt-2">View All</nuxt-link>
       </div>
     </article>
 

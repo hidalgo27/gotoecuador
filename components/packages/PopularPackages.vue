@@ -115,7 +115,7 @@
 
 <!--          <button  class="wtrvl-checkout_button btn-primary block w-full mb-2" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.2" data-uid="239346" :data-uuid="packages.codigo_f" :href="'https://www.wetravel.com/checkout_embed?uuid='+packages.codigo_f" >Book Now</button>-->
 <!--          <button v-show="packages.codigo_f" @click="pack(packages.codigo_f)" class="wtrvl-checkout_button btn-ternary mb-2 block w-full" id="wetravel_button_widget">Book Now</button>-->
-          <nuxt-link  :to="'ecuador-travel-packages/'+packages.url" class="btn-secondary block">View details</nuxt-link>
+          <nuxt-link  :to="'/ecuador-travel-packages/'+packages.url" class="btn-secondary block">View details</nuxt-link>
 
 
 
