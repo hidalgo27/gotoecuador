@@ -32,12 +32,12 @@
 <!--        </div>-->
 <!--      </div>-->
 
-      <div class="h-[60vh] bg-gray-500">
+      <div class="h-[75vh] 2xl:h-[60vh] bg-gray-500">
         <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">
           <template v-for="paquete_destino in packages.paquetes_destinos">
 
               <slide v-for="(destino_imagen, index) in paquete_destino.destinos.destino_imagen" :key="index">
-                <nuxt-img :src="destino_imagen.nombre" alt="" class="object-cover w-full h-[60vh] object-bottom"></nuxt-img>
+                <nuxt-img :src="destino_imagen.nombre" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-[75vh] 2xl:h-[60vh] object-bottom"></nuxt-img>
               </slide>
 
           </template>
