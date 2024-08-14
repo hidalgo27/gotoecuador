@@ -30,7 +30,7 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      Poppins: true,  // Puedes especificar los pesos de las fuentes que necesites
+      Montserrat: [400,700],  // Puedes especificar los pesos de las fuentes que necesites
     }
   },
 

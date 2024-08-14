@@ -1,12 +1,30 @@
 <template>
-  <header class="h-[75vh] relative">
-    <img src="https://gotolatam.com/images/banners/country/calafate.jpg" alt="" class="object-cover w-screen h-full">
-    <div class="absolute inset-x-0 bottom-0 text-center">
-      <h1 class="mb-24 font-bold text-6xl text-white capitalize">
-        {{ destino }} Tours
-      </h1>
+
+
+  <section class="h-[75vh] 2xl:h-[60vh] relative">
+    <nuxt-img :src="'/images/banners/destinations/'+route.params.destino+'.webp'" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover object-bottom w-full h-[75vh] 2xl:h-[60vh]"></nuxt-img>
+
+    <div class="absolute inset-x-0 bottom-0">
+      <div class="container">
+        <h1 class="text-4xl py-6 font-semibold text-gray-50 capitalize">
+          {{ destino }} Tours
+        </h1>
+      </div>
     </div>
-  </header>
+  </section>
+
+<!--  <div class="h-[75vh] 2xl:h-[60vh] bg-gray-500">-->
+<!--    <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">-->
+<!--      <template v-for="paquete_destino in packages.paquetes_destinos">-->
+
+<!--        <slide v-for="(destino_imagen, index) in paquete_destino.destinos.destino_imagen" :key="index">-->
+<!--          <nuxt-img :src="destino_imagen.nombre" alt="" class="object-cover w-full h-[60vh] object-bottom"></nuxt-img>-->
+<!--        </slide>-->
+
+<!--      </template>-->
+<!--    </carousel>-->
+
+<!--  </div>-->
 
   <section class="my-12">
     <div class="container my-6">
@@ -20,7 +38,7 @@
 
       <div class="flex" v-for="destino2 in listDestination">
 
-        <nuxt-link :to="destino2.url" :for="destino2.id" class="w-full text-center gap-2 select-none cursor-pointer  text-gray-800 rounded-full px-5 py-2 transition-colors duration-200 ease-in-out grayscale peer-checked:grayscale-0 peer-checked:text-primary"
+        <nuxt-link :to="destino2.url" :for="destino2.id" class="w-full text-center gap-2 select-none cursor-pointer  text-gray-800 rounded-full px-4 text-sm py-2 transition-colors duration-200 ease-in-out grayscale peer-checked:grayscale-0 peer-checked:text-primary"
                    :class="[destino2.url == destino ? 'bg-[#D6DD85]' : 'bg-gray-100']"
         >
 
@@ -79,6 +97,7 @@
 <script setup lang="ts">
 import {usePackageStore} from "~/stores/packages";
 import PopularPackages from "~/components/packages/PopularPackages.vue";
+import {Carousel, Slide} from "vue3-carousel";
 
 const packageStore = usePackageStore()
 

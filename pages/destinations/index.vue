@@ -8,17 +8,37 @@
 <!--    </div>-->
 <!--  </section>-->
 
-  <section class=" h-[75vh] 2xl:h-[60vh] relative">
-    <nuxt-img src="/images/banners/machupicchu.avif" :placeholder="[50, 25, 75, 5]" alt="" class="object-cover w-screen h-full"></nuxt-img>
+<!--  <section class=" h-[75vh] 2xl:h-[60vh] relative">-->
+<!--    <nuxt-img src="/images/banners/machupicchu.avif" :placeholder="[50, 25, 75, 5]" alt="" class="object-cover w-screen h-full"></nuxt-img>-->
 
-    <div class="absolute inset-x-0 bottom-0">
-      <div class="container">
-        <h1 class="text-4xl py-6 font-semibold text-gray-50">
-          Ecuador Destinations
-        </h1>
+<!--    <div class="absolute inset-x-0 bottom-0">-->
+<!--      <div class="container">-->
+<!--        <h1 class="text-4xl py-6 font-semibold text-gray-50">-->
+<!--          Ecuador Destinations-->
+<!--        </h1>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+  <section>
+    <div class="relative">
+      <div class="h-[75vh] 2xl:h-[60vh] relative overflow-hidden vimeo-wrapper ">
+        <div class="absolute bg-gradient-to-t from-gray-800 h-[75vh] opacity-20 z-10 inset-0"></div>
+        <iframe src="https://player.vimeo.com/video/996360304?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" frameborder="0" allow="autoplay; fullscreen" class=""></iframe>
       </div>
+      <div class="absolute inset-x-0 bottom-0 z-10">
+        <div class="container">
+          <h1 class="text-4xl py-6 font-semibold text-gray-50">
+            Ecuador Destinations
+          </h1>
+        </div>
+
+      </div>
+      <!--      <div class="absolute inset-0 bg-gradient-to-t to-70% from-gray-900 from-0% opacity-50"></div>-->
     </div>
   </section>
+
+
 
   <section class="container py-12 text-gray-500 text-center">
 

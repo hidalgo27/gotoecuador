@@ -3,10 +3,10 @@
 
   <div class="container">
     <div class="grid grid-cols-3 gap-6">
-      <div class="group border  block hover:shadow rounded-2xl overflow-hidden text-center transition duration-500" v-for="(packages, index) in listPackages" :key="index">
+      <div class="group border  block hover:shadow  overflow-hidden text-center transition duration-500" v-for="(packages, index) in listPackages" :key="index">
         <div class="overflow-hidden relative">
           <div class="relative">
-            <img :src="packages.imagen" :alt="packages.titulo" class="object-cover rounded-t-2xl h-96 w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"/>
+            <img :src="packages.imagen" :alt="packages.titulo" class="object-cover h-96 w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"/>
             <div class="absolute inset-0 gradient-cicle-gray"></div>
           </div>
           <div class="absolute inset-x-0 bottom-0 w-full p-6">

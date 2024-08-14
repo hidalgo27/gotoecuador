@@ -13,9 +13,9 @@ export default {
   ],
   theme: {
     extend: {
-      // fontFamily: {
-      //   'sans': ['"Lora"', ...defaultTheme.fontFamily.sans],
-      // },
+      fontFamily: {
+        'sans': ['"Montserrat"', ...defaultTheme.fontFamily.sans],
+      },
     },
     colors: {
       "vtd-primary": colors.sky, // Light mode Datepicker color

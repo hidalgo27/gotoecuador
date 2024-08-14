@@ -158,7 +158,7 @@
 
                 <div class="text-4xl font-semibold text-gray-600">
                   <span class="text-base block">{{ packages.duracion }} days</span>
-                  <h2 class="text-2xl font-bold text-gray-600"> {{ packages.titulo }}</h2>
+                  <h2 class="text-2xl mb-3 font-bold text-gray-600"> {{ packages.titulo }}</h2>
                   <div class="flex -space-x-1 overflow-hidden">
                     <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" :src="team.imagen_perfil" :alt="team.nombre" v-for="(team, index) in limitedTeam" :key="index">
                   </div>
