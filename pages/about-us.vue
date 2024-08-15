@@ -117,6 +117,5 @@
 
 <script lang="ts" setup>
 
-
 import CarouselTeam from "~/components/page/slider/CarouselTeam.vue";
 </script>

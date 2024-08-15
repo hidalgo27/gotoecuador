@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <button
         class="btn-primary wtrvl-checkout_button hidden z-10 "
         id="wetravel_button_widget"
@@ -389,8 +390,19 @@
 </template>
 
 <script lang="ts" setup>
+// console.log('Loading custom layout for itinerary');
+definePageMeta({
+  layout: 'custom',
+});
+setPageLayout('custom')
+useHead({
+  script: [ { src: 'https://cdn.wetravel.com/widgets/embed_checkout.js' } ]
+})
+
 import 'vue3-carousel/dist/carousel.css'
 import {Carousel, Slide} from "vue3-carousel"
+import {usePackageStore} from "~/stores/packages";
+
 
 const listTeam = ref([])
 
@@ -412,16 +424,9 @@ const breakpoints = {
   },
 }
 
-useHead({
-  script: [ { src: 'https://cdn.wetravel.com/widgets/embed_checkout.js' } ]
-})
+
 // import InquireHome from "~/components/form/InquireHome.vue";
 
-definePageMeta({
-  layout: 'detail',
-})
-
-import {usePackageStore} from "~/stores/packages";
 
 const triggerButton = ref(null);
 const targetButton = ref(null);

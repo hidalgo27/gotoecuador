@@ -48,7 +48,7 @@ export default defineNuxtConfig({
     },
   },
   build: {
-    transpile: ['vue3-carousel']
+    transpile: ['vue3-carousel','@pinia-plugin-persistedstate']
   },
   runtimeConfig: {
     apiSecret: '',

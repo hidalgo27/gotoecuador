@@ -253,7 +253,6 @@
 
 </template>
 <script setup lang="ts">
-
 import IconSlider from "~/components/page/home/IconSlider.vue";
 
 import {usePackageStore} from "~/stores/packages";
