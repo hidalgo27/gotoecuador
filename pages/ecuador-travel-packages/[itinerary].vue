@@ -1,3 +1,267 @@
+<script lang="ts" setup>
+import 'vue3-carousel/dist/carousel.css'
+import {Carousel, Slide} from "vue3-carousel"
+import {usePackageStore} from "~/stores/packages";
+import {useFormStore} from "~/stores/form";
+
+definePageMeta({
+  layout: 'custom'
+})
+// setPageLayout('custom')
+useHead({
+  script: [ { src: 'https://cdn.wetravel.com/widgets/embed_checkout.js' } ]
+})
+
+
+const packageStore = usePackageStore()
+const formStore = useFormStore()
+
+const listTeam = ref([])
+
+const breakpoints = {
+  // 500px and up
+  350: {
+    itemsToShow: 1.2,
+    snapAlign: 'start',
+  },
+  // 700px and up
+  700: {
+    itemsToShow: 2.2,
+    snapAlign: 'center',
+  },
+  // 1024 and up
+  1024: {
+    itemsToShow: 2,
+    snapAlign: 'start',
+  },
+}
+
+
+// import InquireHome from "~/components/form/InquireHome.vue";
+
+
+const triggerButton = ref(null);
+const targetButton = ref(null);
+
+
+
+const route = useRoute()
+
+const router = useRouter()
+
+const codeWetravel = ref()
+const viewButton = ref(false)
+
+
+const listPackages = ref([])
+
+const showCount = ref({})
+
+const currentItem = ref(null); //
+const viewPopover = ref()// índice del ítem actualmente abierto
+
+const randomColorClasses = ['bg-primary', 'bg-secondary', 'bg-gray-800', 'bg-yellow-500', 'bg-indigo-500'];
+
+const randomColorBorder = ['border-primary','border-primary', 'border-secondary', 'border-gray-800', 'border-yellow-500', 'border-indigo-500'];
+
+const clickOtherButton = async (item:any) => {
+  // @ts-ignore
+  codeWetravel.value = item
+  await nextTick();
+  targetButton.value.click();
+};
+
+const targetAction = () => {
+  console.log('Botón objetivo clickeado!');
+};
+
+const getQuote = (item) => {
+  router.push("#form-dream-adventure")
+  packageStore.hotelDetail = item
+}
+
+function openPopover(val){
+  if (val){
+    viewPopover.value = val
+  }else {
+    viewPopover.value = 0
+  }
+}
+function closePopover(val){
+  setTimeout(() => {
+    if (mouseIsOverPopover) {
+      if (val){
+        viewPopover.value = 0
+      }
+    }
+  }, 100);
+
+}
+
+
+const mouseIsOverPopover = ref(false)
+
+const items = ref([
+  { title: 'Título 1', content: 'Contenido 1' },
+  { title: 'Título 2', content: 'Contenido 2' },
+  { title: 'Título 3', content: 'Contenido 3' },
+  { title: 'Título 4', content: 'Contenido 4' },
+  { title: 'Título 5', content: 'Contenido 5' },
+  { title: 'Título 6', content: 'Contenido 6' },
+  { title: 'Título 7', content: 'Contenido 7' },
+]);
+const toggleItem = (index) => {
+  if (currentItem.value === index) {
+    currentItem.value = null;
+  } else {
+    currentItem.value = index;
+  }
+};
+
+const displayedItems = ref(listPackages.value.slice(0, 2));
+
+const loadMore = () => {
+  let nextItems = items.value.slice(displayedItems.value.length, displayedItems.value.length + 2);
+  // @ts-ignore
+  displayedItems.value = [...displayedItems.value, ...nextItems];
+};
+const loadLess = () => {
+  displayedItems.value = displayedItems.value.slice(0, displayedItems.value.length - 2);
+};
+
+const canLoadLess = computed(() => displayedItems.value.length > 2);
+
+const canLoadMore = computed(() => items.value.length > displayedItems.value.length);
+
+
+const getPackageItinerary = async (url:any) => {
+  const res = await packageStore.getItinerary(url)
+  listPackages.value = res
+
+  formStore.titlePackages = res[0].titulo
+
+  // if (res.token) {
+  //   policyStore['tokenLogin'] = res.token
+  //   loadingUser.value = false
+  // }
+}
+
+
+const getThreeStarPrice = (arr:any) => {
+  const price = arr.find((priceInfo: { estrellas: number; }) => priceInfo.estrellas === 3);
+  return price ? price.precio_d : 'No disponible';
+}
+
+/*const capitalizeFirstLetter = (string) => {
+  return string
+      ? string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+      : '';
+};*/
+
+const getGroupedByCountry = (arr) => {
+  const grouped = {};
+  for (const paqueteDestino of arr) {
+    const { destinos } = paqueteDestino;
+    const { pais, nombre, id } = destinos;
+    // @ts-ignore
+    if (!grouped[pais]) {
+      // @ts-ignore
+      grouped[pais] = [];
+    }
+    // @ts-ignore
+    grouped[pais].push({ nombre, id });
+  }
+  return grouped;
+};
+
+// const paisesUnicos = (destinos:any) => {
+//   const paisesVistos = new Set();
+//   return destinos.filter((destino: { destinos: { pais: any; }; }) => {
+//     const pais = destino.destinos.pais;
+//     if (!paisesVistos.has(pais.id)) {
+//       paisesVistos.add(pais.id);
+//       return true;
+//     }
+//     return false;
+//   }).map((destino: { destinos: { pais: any; }; }) => destino.destinos.pais);
+// };
+
+
+// const obtenerDestinosPorPais = (paisId:number) => {
+//   const destinos: any[] = [];
+//   listPackages.value.forEach(paquete => {
+//     paquete.paquetes_destinos.forEach((destino: { destinos: { pais: { id: number; }; }; }) => {
+//       if (destino.destinos.pais.id === paisId) {
+//         destinos.push(destino.destinos);
+//       }
+//     });
+//   });
+//   return destinos;
+// };
+
+
+const expand = (id) => {
+  // @ts-ignore
+  const totalLength = listPackages.value.find(p => p.id === id).paquete_itinerario.length;
+  // @ts-ignore
+  showCount.value[id] = Math.min(showCount.value[id] + 8, totalLength); // Aumentar de 2 en 2
+};
+
+
+const contract = (id) => {
+  // @ts-ignore
+  showCount.value[id] = Math.max(4, showCount.value[id] - 4); // Reducir de 2 en 2, mínimo 2
+};
+
+
+// const loadScript = () => {
+//   const scriptExists = document.querySelector('script[src="https://cdn.wetravel.com/widgets/embed_checkout.js"]') !== null;
+//   if (!scriptExists) {
+//     const script = document.createElement('script');
+//     script.src = 'https://cdn.wetravel.com/widgets/embed_checkout.js';
+//     script.type = 'text/javascript';
+//     script.async = true;
+//     document.head.appendChild(script);
+//   }
+// }
+
+const getTeam = async () => {
+  const res:any = await packageStore.getTeam()
+
+
+  listTeam.value = res
+  // if (res.token) {
+  //   policyStore['tokenLogin'] = res.token
+  //   loadingUser.value = false
+  // }
+}
+const limitedTeam = computed(() => listTeam.value.slice(0, 7));
+onMounted(async () => {
+  await getTeam()
+  // loadScript()
+  // console.log(route)
+  await getPackageItinerary(route.params.itinerary)
+  listPackages.value.forEach(p => {
+    // @ts-ignore
+    showCount.value[p.id] = 8;
+  });
+
+  // await nextTick();
+  codeWetravel.value = packageStore.code_w
+  viewButton.value = true
+
+})
+
+
+// onUnmounted(() => {
+//   const script = document.querySelector('script[src="https://cdn.wetravel.com/widgets/embed_checkout.js"]');
+//   if (script) {
+//     script.remove();
+//   }
+// });
+
+
+</script>
 <template>
   <div>
 
@@ -389,264 +653,3 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-// console.log('Loading custom layout for itinerary');
-definePageMeta({
-  layout: 'custom',
-});
-setPageLayout('custom')
-useHead({
-  script: [ { src: 'https://cdn.wetravel.com/widgets/embed_checkout.js' } ]
-})
-
-import 'vue3-carousel/dist/carousel.css'
-import {Carousel, Slide} from "vue3-carousel"
-import {usePackageStore} from "~/stores/packages";
-
-
-const listTeam = ref([])
-
-const breakpoints = {
-  // 500px and up
-  350: {
-    itemsToShow: 1.2,
-    snapAlign: 'start',
-  },
-  // 700px and up
-  700: {
-    itemsToShow: 2.2,
-    snapAlign: 'center',
-  },
-  // 1024 and up
-  1024: {
-    itemsToShow: 2,
-    snapAlign: 'start',
-  },
-}
-
-
-// import InquireHome from "~/components/form/InquireHome.vue";
-
-
-const triggerButton = ref(null);
-const targetButton = ref(null);
-
-const packageStore = usePackageStore()
-
-const route = useRoute()
-
-const router = useRouter()
-
-const codeWetravel = ref()
-const viewButton = ref(false)
-
-
-const listPackages = ref([])
-
-const showCount = ref({})
-
-const currentItem = ref(null); //
-const viewPopover = ref()// índice del ítem actualmente abierto
-
-const randomColorClasses = ['bg-primary', 'bg-secondary', 'bg-gray-800', 'bg-yellow-500', 'bg-indigo-500'];
-
-const randomColorBorder = ['border-primary','border-primary', 'border-secondary', 'border-gray-800', 'border-yellow-500', 'border-indigo-500'];
-
-const clickOtherButton = async (item:any) => {
-  // @ts-ignore
-  codeWetravel.value = item
-  await nextTick();
-  targetButton.value.click();
-};
-
-const targetAction = () => {
-  console.log('Botón objetivo clickeado!');
-};
-
-const getQuote = (item) => {
-  router.push("#form-dream-adventure")
-  packageStore.hotelDetail = item
-}
-
-function openPopover(val){
-  if (val){
-    viewPopover.value = val
-  }else {
-    viewPopover.value = 0
-  }
-}
-function closePopover(val){
-  setTimeout(() => {
-    if (mouseIsOverPopover) {
-      if (val){
-        viewPopover.value = 0
-      }
-    }
-  }, 100);
-
-}
-
-
-const mouseIsOverPopover = ref(false)
-
-const items = ref([
-  { title: 'Título 1', content: 'Contenido 1' },
-  { title: 'Título 2', content: 'Contenido 2' },
-  { title: 'Título 3', content: 'Contenido 3' },
-  { title: 'Título 4', content: 'Contenido 4' },
-  { title: 'Título 5', content: 'Contenido 5' },
-  { title: 'Título 6', content: 'Contenido 6' },
-  { title: 'Título 7', content: 'Contenido 7' },
-]);
-const toggleItem = (index) => {
-  if (currentItem.value === index) {
-    currentItem.value = null;
-  } else {
-    currentItem.value = index;
-  }
-};
-
-const displayedItems = ref(listPackages.value.slice(0, 2));
-
-const loadMore = () => {
-  let nextItems = items.value.slice(displayedItems.value.length, displayedItems.value.length + 2);
-  // @ts-ignore
-  displayedItems.value = [...displayedItems.value, ...nextItems];
-};
-const loadLess = () => {
-  displayedItems.value = displayedItems.value.slice(0, displayedItems.value.length - 2);
-};
-
-const canLoadLess = computed(() => displayedItems.value.length > 2);
-
-const canLoadMore = computed(() => items.value.length > displayedItems.value.length);
-
-
-const getPackageItinerary = async (url) => {
-  const res = await packageStore.getItinerary(url)
-  listPackages.value = res
-
-  packageStore.titlePackages = res[0].titulo
-
-  // if (res.token) {
-  //   policyStore['tokenLogin'] = res.token
-  //   loadingUser.value = false
-  // }
-}
-
-
-const getThreeStarPrice = (arr:any) => {
-  const price = arr.find((priceInfo: { estrellas: number; }) => priceInfo.estrellas === 3);
-  return price ? price.precio_d : 'No disponible';
-}
-
-/*const capitalizeFirstLetter = (string) => {
-  return string
-      ? string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
-      : '';
-};*/
-
-const getGroupedByCountry = (arr) => {
-  const grouped = {};
-  for (const paqueteDestino of arr) {
-    const { destinos } = paqueteDestino;
-    const { pais, nombre, id } = destinos;
-    // @ts-ignore
-    if (!grouped[pais]) {
-      // @ts-ignore
-      grouped[pais] = [];
-    }
-    // @ts-ignore
-    grouped[pais].push({ nombre, id });
-  }
-  return grouped;
-};
-
-// const paisesUnicos = (destinos:any) => {
-//   const paisesVistos = new Set();
-//   return destinos.filter((destino: { destinos: { pais: any; }; }) => {
-//     const pais = destino.destinos.pais;
-//     if (!paisesVistos.has(pais.id)) {
-//       paisesVistos.add(pais.id);
-//       return true;
-//     }
-//     return false;
-//   }).map((destino: { destinos: { pais: any; }; }) => destino.destinos.pais);
-// };
-
-
-// const obtenerDestinosPorPais = (paisId:number) => {
-//   const destinos: any[] = [];
-//   listPackages.value.forEach(paquete => {
-//     paquete.paquetes_destinos.forEach((destino: { destinos: { pais: { id: number; }; }; }) => {
-//       if (destino.destinos.pais.id === paisId) {
-//         destinos.push(destino.destinos);
-//       }
-//     });
-//   });
-//   return destinos;
-// };
-
-
-const expand = (id) => {
-  // @ts-ignore
-  const totalLength = listPackages.value.find(p => p.id === id).paquete_itinerario.length;
-  // @ts-ignore
-  showCount.value[id] = Math.min(showCount.value[id] + 8, totalLength); // Aumentar de 2 en 2
-};
-
-
-const contract = (id) => {
-  // @ts-ignore
-  showCount.value[id] = Math.max(4, showCount.value[id] - 4); // Reducir de 2 en 2, mínimo 2
-};
-
-
-// const loadScript = () => {
-//   const scriptExists = document.querySelector('script[src="https://cdn.wetravel.com/widgets/embed_checkout.js"]') !== null;
-//   if (!scriptExists) {
-//     const script = document.createElement('script');
-//     script.src = 'https://cdn.wetravel.com/widgets/embed_checkout.js';
-//     script.type = 'text/javascript';
-//     script.async = true;
-//     document.head.appendChild(script);
-//   }
-// }
-
-const getTeam = async () => {
-  const res:any = await packageStore.getTeam()
-
-
-  listTeam.value = res
-  // if (res.token) {
-  //   policyStore['tokenLogin'] = res.token
-  //   loadingUser.value = false
-  // }
-}
-const limitedTeam = computed(() => listTeam.value.slice(0, 7));
-onMounted(async () => {
-  await getTeam()
-  // loadScript()
-  // console.log(route)
-  await getPackageItinerary(route.params.itinerary)
-  listPackages.value.forEach(p => {
-    // @ts-ignore
-    showCount.value[p.id] = 8;
-  });
-
-  // await nextTick();
-  codeWetravel.value = packageStore.code_w
-  viewButton.value = true
-
-})
-
-
-// onUnmounted(() => {
-//   const script = document.querySelector('script[src="https://cdn.wetravel.com/widgets/embed_checkout.js"]');
-//   if (script) {
-//     script.remove();
-//   }
-// });
-
-
-</script>

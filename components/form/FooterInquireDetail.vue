@@ -1,3 +1,212 @@
+<script setup lang="ts">
+import {email, required} from "@vuelidate/validators";
+import {useVuelidate} from "@vuelidate/core";
+import {useIpStore} from "~/stores/ip";
+import {Notification, NotificationGroup, notify} from "notiwind";
+import VueTailwindDatepicker from "vue-tailwind-datepicker";
+import {useFormStore} from "~/stores/form";
+
+const formStore = useFormStore()
+// const formStore = usePackageStore()
+const ipStore = useIpStore()
+
+const package_title = ref()
+
+const showLoader = ref(false)
+
+const travelDate = ref()
+const traveller = ref()
+const hotel = ref([])
+const destination = ref([])
+
+const fullName = ref('')
+const phone = ref('')
+const userEmail = ref('')
+const comment = ref('')
+
+const listDestination = ref([])
+
+const geoIp = ref()
+
+const phoneInputRef = ref(null);
+
+const showModalProcess = ref(false)
+
+const formatter = ref({
+  date: 'DD MMM YYYY',
+  month: 'MMM'
+})
+
+const onClickSomething = () => {
+  showModalProcess.value = false
+}
+
+// VALIDACION
+const rules = {
+  fullName: { required },
+  phone: { required },
+  userEmail: { required, email },
+  // comment: { required },
+};
+
+const $v = useVuelidate(rules, { fullName, phone, userEmail});
+
+const handleSubmit = async () => {
+
+  $v.value.$validate();
+  if ($v.value.$invalid) {
+    // manejar errores
+    console.log('Formulario no válido');
+  } else {
+    // manejar envío
+    console.log('Formulario válido');
+
+    showLoader.value = true
+
+    let obj = {
+      el_package: formStore.titlePackages,
+      category_d: hotel.value,
+      destino_d: '',
+      pasajeros_d: traveller.value,
+      // duracion_d: this.duracionSeleccionadosForm,
+
+      el_nombre: fullName.value,
+      el_email: userEmail.value,
+      el_fecha: formStore.travelDate,
+      el_telefono: phone.value,
+      el_textarea: comment.value,
+
+      country: geoIp.value.country+" "+geoIp.value.country_calling_code
+    }
+
+    const res:any = await formStore.getInquire(obj).then((res) => {
+      if (res){
+        showLoader.value = false
+
+        formStore.travelDate = []
+        traveller.value = ""
+        hotel.value = []
+        formStore.destination = []
+
+        fullName.value = ""
+        phone.value = ""
+        userEmail.value = ""
+        comment.value = ""
+        formStore.showModalItinerary = false
+        formStore.$reset()
+
+        $v.value.$reset()
+
+        notify({
+          group: "foo",
+          title: 'Well done',
+          type: "success",
+          text: "Your trip has been successfully created 🙂",
+        }, 4000) // 4s
+
+      }else{
+        showLoader.value = false
+        formStore.showModalItinerary = false
+        notify({
+          group: "foo",
+          title: 'Error',
+          type: "error",
+          text: "Error :(",
+        }, 4000) // 4s
+      }
+    }).catch((err) => {
+      showLoader.value = false
+      formStore.showModalItinerary = false
+
+      formStore.travelDate = []
+      traveller.value = ""
+      hotel.value = []
+      formStore.destination = []
+
+      fullName.value = ""
+      phone.value = ""
+      userEmail.value = ""
+      comment.value = ""
+
+      formStore.$reset()
+
+      $v.value.$reset()
+
+      notify({
+        group: "foo",
+        title: 'Error',
+        type: "error",
+        text: "Error :(",
+      }, 4000) // 4s
+    })
+
+
+  }
+};
+
+const disablePastDates = (date:any) => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Asegurarse de que solo se comparen las fechas
+  return date < today;
+};
+
+const getPais = async () => {
+  // const res:any = await formStore.getPais()
+  const res:any = await formStore.getCountry('peru')
+  listDestination.value = res.filter(desti => desti.form === 1);
+
+  // listDestination.value = res
+  // if (res.token) {
+  //   policyStore['tokenLogin'] = res.token
+  //   loadingUser.value = false
+  // }
+}
+
+const getIp = async () => {
+  const res = await ipStore.getIp()
+  geoIp.value = res
+  // if (res.token) {
+  //   policyStore['tokenLogin'] = res.token
+  //   loadingUser.value = false
+  // }
+}
+
+
+onMounted(async () => {
+  await getIp()
+
+  await getPais()
+
+  package_title.value = formStore.titlePackages
+
+  if (process.client) {
+    // @ts-ignore
+    import('intl-tel-input/build/js/intlTelInput.min.js').then((module) => {
+      const intlTelInput = module.default;
+      if (phoneInputRef.value) {
+
+        // if (res.token) {
+        //   policyStore['tokenLogin'] = res.token
+        //   loadingUser.value = false
+        // }
+
+        intlTelInput(phoneInputRef.value, {
+          initialCountry: "auto",
+          // @ts-ignore
+          geoIpLookup: function(callback) {
+            fetch("https://ipapi.co/json")
+                .then(function(res) { return res.json(); })
+                .then(function(data) { callback(data.country_code); })
+                .catch(function() { callback("us"); });
+          },
+        });
+      }
+    });
+  }
+
+})
+
+</script>
 <template>
   <div class="container md:w-1/2 2xl:w-1/3 my-24" id="form-dream-adventure">
 
@@ -5,7 +214,8 @@
           <div class="grid grid-cols-1">
 
             <section class="pb-8 text-center">
-              <img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-black.png" alt="" class="mx-auto w-64">
+<!--              <img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-black.png" alt="" class="mx-auto w-64">-->
+              <nuxt-img src="/images/logos/logo-gotoecuador3.svg" class="w-[250px] md:w-[320px] mx-auto"></nuxt-img>
               <h3 class="my-3 font-semibold text-gray-700 text-2xl">Free Quote</h3>
               <p class="text-gray-500">Select your travel preferences and we will send you a travel proposal.</p>
             </section>
@@ -14,8 +224,8 @@
             <div class="text-left mt-6">
               <h2 class="text-lg text-tertiary mb-5">Get a quote on this travel package:</h2>
 
-              <h2 class="text-xl text-tertiary mb-5 text-center px-5 py-2 border border-gray-300 text-primary font-semibold rounded-lg">
-                {{ package_title }}</h2>
+              <h2 class="text-xl text-tertiary mb-5 bg-white text-center px-5 py-2 border border-gray-300 text-primary font-semibold rounded-sm">
+                {{ formStore.titlePackages }}</h2>
 
               <h3 class="text-lg text-tertiary my-5">Hotel Category</h3>
               <div class="grid grid-cols-12 gap-6 my-3 overflow-x-scroll focus:touch-pan-x">
@@ -26,9 +236,9 @@
                 </div>
                 <div class="col-span-12 md:col-span-10 grid grid-cols-3 gap-3 overflow-x-scroll focus:touch-pan-x">
 
-                <div class="flex flex-col">
-                  <input type="checkbox" id="hotel_5" class="peer hidden" value="5" v-model="packageStore.hotelDetail" />
-                  <label for="hotel_5" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-lg divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                <div class="flex flex-col bg-white rounded-sm">
+                  <input type="checkbox" id="hotel_5" class="peer hidden" value="5" v-model="hotel" />
+                  <label for="hotel_5" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                     <div class="pb-1">
                       <!--                      <img src="/icons/hotel.svg" alt="">-->
                       <h4 class=" pt-1 text-center">Luxury</h4>
@@ -41,9 +251,9 @@
                   </label>
                 </div>
 
-                <div class="flex flex-col">
-                  <input type="checkbox" id="hotel_4" class="peer hidden" value="4" v-model="packageStore.hotelDetail" />
-                  <label for="hotel_4" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-lg divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                <div class="flex flex-col bg-white rounded-sm">
+                  <input type="checkbox" id="hotel_4" class="peer hidden" value="4" v-model="hotel" />
+                  <label for="hotel_4" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                     <div class="pb-1">
                       <!--                      <img src="/icons/hotel.svg" alt="">-->
                       <h4 class=" pt-1 text-center">Superior</h4>
@@ -56,9 +266,9 @@
                   </label>
                 </div>
 
-                <div class="flex flex-col">
-                  <input type="checkbox" id="hotel_3" class="peer hidden" value="3" v-model="packageStore.hotelDetail" />
-                  <label for="hotel_3" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-lg divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                <div class="flex flex-col bg-white rounded-sm">
+                  <input type="checkbox" id="hotel_3" class="peer hidden" value="3" v-model="hotel" />
+                  <label for="hotel_3" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                     <div class="pb-1">
                       <!--                      <img src="/icons/hotel.svg" alt="">-->
                       <h4 class=" pt-1 text-center">Best Value</h4>
@@ -84,12 +294,12 @@
                 <div class="col-span-12 md:col-span-10 grid grid-cols-7 gap-3">
                 <div class="flex" v-for="n in 6" :key="n">
                   <input type="radio" :id="'radio_'+n" class="peer hidden" :value="n" v-model="traveller" />
-                  <label :for="'radio_'+n" class="select-none w-full text-center cursor-pointer bg-gray-100 text-gray-800 rounded-lg px-5 py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> {{ n }} </label>
+                  <label :for="'radio_'+n" class="select-none w-full text-center cursor-pointer bg-white text-gray-800 rounded-sm px-5 py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> {{ n }} </label>
                 </div>
 
                 <div class="flex">
                   <input type="radio" :id="'radio_7'" class="peer hidden" value="7+" v-model="traveller" />
-                  <label :for="'radio_7'" class="select-none w-full text-center cursor-pointer bg-gray-100 text-gray-800 rounded-lg py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> 11+ </label>
+                  <label :for="'radio_7'" class="select-none w-full text-center cursor-pointer bg-white text-gray-800 rounded-sm py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> 11+ </label>
                 </div>
                 </div>
 
@@ -102,6 +312,7 @@
                 <div class="grid grid-cols-1 mt-6 gap-3">
                   <div class="relative">
                     <div class="relative">
+                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
                       <input
                           type="text"
                           name="search"
@@ -123,6 +334,7 @@
 
                   <div class="grid grid-cols-2 gap-3">
                     <div class="relative">
+                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
                       <input
                           type="text"
                           class="is-input-ico peer"
@@ -145,33 +357,31 @@
 
 
                     <div class="relative">
-                      <VMenu>
-                        <input type="text" class="is-input-ico peer" placeholder=" " v-model="packageStore.travelDate" @focus="showModalProcess = true">
-                        <label class="is-input-ico-label" @click="showModalProcess = true">When</label>
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-2 md:pl-4 pointer-events-none">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                          </svg>
-                        </div>
-                        <template #popper>
-                          <vue-tailwind-datepicker as-single no-input :formatter="formatter" v-model="packageStore.travelDate" @click="onClickSomething()" class="calendar-w"/>
-                        </template>
-                      </VMenu>
+<!--                      <VMenu>-->
+<!--                        <input type="text" class="is-input-ico peer" placeholder=" " v-model="formStore.travelDate" @focus="showModalProcess = true">-->
+<!--                        <label class="is-input-ico-label" @click="showModalProcess = true">When</label>-->
+<!--                        <div class="absolute inset-y-0 left-0 flex items-center pl-2 md:pl-4 pointer-events-none">-->
+<!--                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">-->
+<!--                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />-->
+<!--                          </svg>-->
+<!--                        </div>-->
+<!--                        <template #popper>-->
+<!--                          <vue-tailwind-datepicker as-single no-input :formatter="formatter" v-model="formStore.travelDate" @click="onClickSomething()" class="calendar-w"/>-->
+<!--                        </template>-->
+<!--                      </VMenu>-->
+                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
+
+                      <vue-tailwind-datepicker as-single  :formatter="formatter" placeholder="Tentative travel date" :disable-date="disablePastDates" v-model="formStore.travelDate" input-classes="is-input-ico peer !pl-3"/>
+                      <label class="is-input-ico-label !pl-0" @click="showModalProcess = true">When</label>
+
 
                     </div>
-
-                    <!--                    <div class="relative">-->
-                    <!--                      <vue-tailwind-datepicker as-single no-input :formatter="formatter" v-model="packageStore.travelDate" @click="onClickSomething()" class="calendar-w"/>-->
-                    <!--                    </div>-->
-
-
-
-
 
                   </div>
 
                   <div class="relative">
                     <div class="relative">
+                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
                       <input
                           type="email"
                           name="search"
@@ -195,6 +405,7 @@
 
                   <div class="relative">
                     <div class="relative">
+                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
                     <textarea
                         type="text"
                         name="search"
@@ -289,205 +500,7 @@
   </NotificationGroup>
 
 </template>
-<script setup lang="ts">
-import {usePackageStore} from "~/stores/packages";
-import {email, required} from "@vuelidate/validators";
-import {useVuelidate} from "@vuelidate/core";
-import {useIpStore} from "~/stores/ip";
-import {Notification, NotificationGroup, notify} from "notiwind";
 
-const packageStore = usePackageStore()
-const ipStore = useIpStore()
-
-const package_title = ref()
-
-const showLoader = ref(false)
-
-const travelDate = ref()
-const traveller = ref()
-const hotel = ref([])
-const destination = ref([])
-
-const fullName = ref('')
-const phone = ref('')
-const userEmail = ref('')
-const comment = ref('')
-
-const listDestination = ref([])
-
-const geoIp = ref()
-
-const phoneInputRef = ref(null);
-
-const showModalProcess = ref(false)
-
-const formatter = ref({
-  date: 'YYYY/MM/DD',
-  month: 'MMM'
-})
-
-const onClickSomething = () => {
-  showModalProcess.value = false
-}
-
-// VALIDACION
-const rules = {
-  fullName: { required },
-  phone: { required },
-  userEmail: { required, email },
-  // comment: { required },
-};
-
-const $v = useVuelidate(rules, { fullName, phone, userEmail});
-
-const handleSubmit = async () => {
-
-  $v.value.$validate();
-  if ($v.value.$invalid) {
-    // manejar errores
-    console.log('Formulario no válido');
-  } else {
-    // manejar envío
-    console.log('Formulario válido');
-
-    showLoader.value = true
-
-    let obj = {
-      el_package: packageStore.titlePackages,
-      category_d: packageStore.hotelDetail,
-      destino_d: packageStore.destination,
-      pasajeros_d: traveller.value,
-      // duracion_d: this.duracionSeleccionadosForm,
-
-      el_nombre: fullName.value,
-      el_email: userEmail.value,
-      el_fecha: packageStore.travelDate,
-      el_telefono: phone.value,
-      el_textarea: comment.value,
-
-      country: geoIp.value.country+" "+geoIp.value.country_calling_code
-    }
-
-    const res:any = await packageStore.getInquire(obj).then((res) => {
-      if (res){
-        showLoader.value = false
-
-        packageStore.travelDate = []
-        traveller.value = ""
-        hotel.value = []
-        packageStore.destination = []
-
-        fullName.value = ""
-        phone.value = ""
-        userEmail.value = ""
-        comment.value = ""
-        packageStore.showModalItinerary = false
-        packageStore.$reset()
-
-        $v.value.$reset()
-
-        notify({
-          group: "foo",
-          title: 'Well done',
-          type: "success",
-          text: "Your trip has been successfully created 🙂",
-        }, 4000) // 4s
-
-      }else{
-        showLoader.value = false
-        packageStore.showModalItinerary = false
-        notify({
-          group: "foo",
-          title: 'Error',
-          type: "error",
-          text: "Error :(",
-        }, 4000) // 4s
-      }
-    }).catch((err) => {
-      showLoader.value = false
-      packageStore.showModalItinerary = false
-
-      packageStore.travelDate = []
-      traveller.value = ""
-      hotel.value = []
-      packageStore.destination = []
-
-      fullName.value = ""
-      phone.value = ""
-      userEmail.value = ""
-      comment.value = ""
-
-      packageStore.$reset()
-
-      $v.value.$reset()
-
-      notify({
-        group: "foo",
-        title: 'Error',
-        type: "error",
-        text: "Error :(",
-      }, 4000) // 4s
-    })
-
-
-  }
-};
-
-
-const getPais = async () => {
-  const res:any = await packageStore.getPais()
-  listDestination.value = res
-  // if (res.token) {
-  //   policyStore['tokenLogin'] = res.token
-  //   loadingUser.value = false
-  // }
-}
-
-const getIp = async () => {
-  const res = await ipStore.getIp()
-  geoIp.value = res
-  // if (res.token) {
-  //   policyStore['tokenLogin'] = res.token
-  //   loadingUser.value = false
-  // }
-}
-
-
-onMounted(async () => {
-  await getIp()
-
-  await getPais()
-
-  package_title.value = packageStore.titlePackages
-
-  if (process.client) {
-    // @ts-ignore
-    import('intl-tel-input/build/js/intlTelInput.min.js').then((module) => {
-      const intlTelInput = module.default;
-      if (phoneInputRef.value) {
-
-        // if (res.token) {
-        //   policyStore['tokenLogin'] = res.token
-        //   loadingUser.value = false
-        // }
-
-        intlTelInput(phoneInputRef.value, {
-          initialCountry: "auto",
-          // @ts-ignore
-          geoIpLookup: function(callback) {
-            fetch("https://ipapi.co/json")
-                .then(function(res) { return res.json(); })
-                .then(function(data) { callback(data.country_code); })
-                .catch(function() { callback("us"); });
-          },
-        });
-      }
-    });
-  }
-
-})
-
-</script>
 <style>
 @import 'intl-tel-input/build/css/intlTelInput.css';
 </style>

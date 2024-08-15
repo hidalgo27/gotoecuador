@@ -27,7 +27,7 @@
 </template>
 <script setup lang="ts">
 definePageMeta({
-  layout: 'default'
+  layout: 'custom'
 })
 import {usePackageStore} from "~/stores/packages";
 import PopularPackages from "~/components/packages/PopularPackages.vue";

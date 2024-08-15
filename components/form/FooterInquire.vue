@@ -5,7 +5,8 @@
       <div class="grid grid-cols-1">
 
         <section class="pb-8 text-center">
-          <img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-black.png" alt="" class="mx-auto w-64">
+<!--          <img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-black.png" alt="" class="mx-auto w-64">-->
+          <nuxt-img src="/images/logos/logo-gotoecuador3.svg" class="w-[250px] md:w-[320px] mx-auto"></nuxt-img>
           <h3 class="my-3 font-semibold text-gray-700 text-2xl">Free Quote</h3>
           <p class="text-gray-500">We're flexible! Postpone your tour with zero cost up to 10 days prior to departure.</p>
 
@@ -27,7 +28,7 @@
 
               <div class="flex flex-col bg-white">
                 <input type="checkbox" id="hotel_5" class="peer hidden" value="5" v-model="hotel" />
-                <label for="hotel_5" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-center text-gray-400 rounded-lg divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                <label for="hotel_5" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-center text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                   <div class="pb-1">
 <!--                    <img src="/icons/hotel.svg" alt="">-->
                     <h4 class=" pt-1">Luxury</h4>
@@ -42,7 +43,7 @@
 
               <div class="flex flex-col bg-white">
                 <input type="checkbox" id="hotel_4" class="peer hidden" value="4" v-model="hotel" />
-                <label for="hotel_4" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-lg divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                <label for="hotel_4" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                   <div class="pb-1 text-center">
 <!--                    <img src="/icons/hotel.svg" alt="">-->
                     <h4 class=" pt-1">Superior</h4>
@@ -57,7 +58,7 @@
 
               <div class="flex flex-col bg-white">
                 <input type="checkbox" id="hotel_3" class="peer hidden" value="3" v-model="hotel" />
-                <label for="hotel_3" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-lg divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                <label for="hotel_3" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                   <div class="pb-1 text-center">
 <!--                    <img src="/icons/hotel.svg" alt="">-->
                     <h4 class=" pt-1">Best Value</h4>
@@ -86,12 +87,12 @@
             <div class="col-span-12 md:col-span-10 grid grid-cols-7 gap-3">
               <div class="flex" v-for="n in 6" :key="n">
                 <input type="radio" :id="'radio_'+n" class="peer hidden" :value="n" v-model="traveller" />
-                <label :for="'radio_'+n" class="w-full select-none cursor-pointer bg-white text-gray-800 rounded-lg text-center py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> {{ n }} </label>
+                <label :for="'radio_'+n" class="w-full select-none cursor-pointer bg-white text-gray-800 rounded-sm text-center py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> {{ n }} </label>
               </div>
 
               <div class="flex">
                 <input type="radio" :id="'radio_7'" class="peer hidden" value="7+" v-model="traveller" />
-                <label :for="'radio_7'" class="w-full select-none cursor-pointer bg-white text-gray-800 rounded-lg text-center py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> 7+ </label>
+                <label :for="'radio_7'" class="w-full select-none cursor-pointer bg-white text-gray-800 rounded-sm text-center py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> 7+ </label>
               </div>
             </div>
 
@@ -111,13 +112,13 @@
 
             <!--          <div class="flex" v-for="n in 5" :key="n">-->
             <!--            <input type="radio" :id="'radio_'+n" class="peer hidden" :value="n" v-model="traveller" />-->
-            <!--            <label :for="'radio_'+n" class="select-none cursor-pointer w-full border border-gray-300 text-gray-400 rounded-lg px-5 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary"> {{ n }} </label>-->
+            <!--            <label :for="'radio_'+n" class="select-none cursor-pointer w-full border border-gray-300 text-gray-400 rounded-sm px-5 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary"> {{ n }} </label>-->
             <!--          </div>-->
 
             <div class="col-span-12 md:col-span-10 grid grid-cols-6 md:grid-cols-6 gap-3 overflow-x-scroll focus:touch-pan-x">
               <div class="flex bg-white">
                 <input type="checkbox" :id="'radio_t_1'" class="peer hidden" value="3-7" v-model="trip_length" />
-                <label :for="'radio_t_1'" class="select-none leading-3 cursor-pointer w-full border border-gray-300 text-center text-gray-400 rounded-lg px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
+                <label :for="'radio_t_1'" class="select-none leading-3 cursor-pointer w-full border border-gray-300 text-center text-gray-400 rounded-sm px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
                   <span class="text-sm md:text-sm">3-7</span>
                   <hr>
                   <span class="text-xs">days</span>
@@ -126,7 +127,7 @@
 
               <div class="flex bg-white">
                 <input type="checkbox" :id="'radio_t_2'" class="peer hidden" value="8-11" v-model="trip_length" />
-                <label :for="'radio_t_2'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-lg px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
+                <label :for="'radio_t_2'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-sm px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
                   <span class="text-sm md:text-sm">8-11</span>
                   <hr>
                   <span class="text-xs">days</span>
@@ -135,7 +136,7 @@
 
               <div class="flex bg-white">
                 <input type="checkbox" :id="'radio_t_3'" class="peer hidden" value="12-16" v-model="trip_length" />
-                <label :for="'radio_t_3'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-lg px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
+                <label :for="'radio_t_3'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-sm px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
                   <span class="text-sm md:text-sm">12-16</span>
                   <hr>
                   <span class="text-xs">days</span>
@@ -144,7 +145,7 @@
 
               <div class="flex bg-white">
                 <input type="checkbox" :id="'radio_t_4'" class="peer hidden" value="17-21" v-model="trip_length" />
-                <label :for="'radio_t_4'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-lg px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
+                <label :for="'radio_t_4'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-sm px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
                   <span class="text-sm md:text-sm">17-21</span>
                   <hr>
                   <span class="text-xs">days</span>
@@ -153,7 +154,7 @@
 
               <div class="flex bg-white">
                 <input type="checkbox" :id="'radio_t_5'" class="peer hidden" value="22+" v-model="trip_length" />
-                <label :for="'radio_t_5'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-lg px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
+                <label :for="'radio_t_5'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-sm px-1 md:px-2 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary">
                   <span class="text-sm md:text-sm">22+</span>
                   <hr>
                   <span class="text-xs">days</span>
@@ -162,7 +163,7 @@
 
               <div class="flex bg-white">
                 <input type="checkbox" :id="'radio_t_6'" class="peer hidden" value="Undecided" v-model="trip_length" />
-                <label :for="'radio_t_6'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-lg px-1 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary text-[10px]">
+                <label :for="'radio_t_6'" class="select-none cursor-pointer w-full border border-gray-300 text-center leading-3 text-gray-400 rounded-sm px-1 py-2 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary text-[10px]">
                   Undecided</label>
               </div>
             </div>
@@ -322,7 +323,7 @@
             <div v-for="notification in notifications" :key="notification.id">
               <div
                   v-if="notification.type === 'success'"
-                  class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-white rounded-lg shadow-md"
+                  class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-white rounded-sm shadow-md"
               >
                 <div class="flex items-center justify-center w-12 bg-green-500">
                   <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -339,7 +340,7 @@
               </div>
 
               <div
-                  class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-white rounded-lg shadow-md"
+                  class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-white rounded-sm shadow-md"
                   v-if="notification.type === 'error'"
               >
                 <div class="flex items-center justify-center w-12 bg-red-500">

@@ -5,9 +5,11 @@ export const useFormStore = defineStore('FormStore', () => {
 	const travelDate = ref()
 	const destination = ref([])
 	const showModalInquireGlobal = ref(false)
+	const showModalItinerary = ref(false)
+	const titlePackages = ref()
 
 	const $reset = () => {
-		travelDate.value = ""
+		travelDate.value = ''
 	}
 
 	const getInquire = async (obj:any) => {
@@ -59,6 +61,8 @@ export const useFormStore = defineStore('FormStore', () => {
 		travelDate,
 		destination,
 		showModalInquireGlobal,
+		showModalItinerary,
+		titlePackages,
 		getInquire,
 		getCountry,
 		$reset

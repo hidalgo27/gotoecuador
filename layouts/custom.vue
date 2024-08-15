@@ -1,11 +1,13 @@
 <template>
-  <Headers></Headers>
-  <slot></slot>
-  <section class="py-2 bg-gray-100 mt-12 relative z-10">
+  <div>
+    <Headers></Headers>
+    <slot></slot>
+    <section class="py-2 bg-gray-100 mt-12 relative z-10">
 
-    <FormFooterInquireDetail></FormFooterInquireDetail>
-  </section>
-  <Footer></Footer>
+      <FormFooterInquireDetail></FormFooterInquireDetail>
+    </section>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script setup lang="ts">

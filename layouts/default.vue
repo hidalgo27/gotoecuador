@@ -1,14 +1,14 @@
 <template>
   <div>
-  <Headers></Headers>
+    <Headers></Headers>
 
-  <slot/>
+    <slot/>
 
-  <section class="py-2 bg-gray-100 mt-12 relative z-10">
+    <section class="py-2 bg-gray-100 mt-12 relative z-10">
 
-    <form-footer-inquire></form-footer-inquire>
-  </section>
-  <Footer></Footer>
+      <form-footer-inquire></form-footer-inquire>
+    </section>
+    <Footer></Footer>
   </div>
 </template>
 
