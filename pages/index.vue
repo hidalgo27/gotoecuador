@@ -6,7 +6,7 @@
         <iframe src="https://player.vimeo.com/video/996360304?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" frameborder="0" allow="autoplay; fullscreen" class=""></iframe>
       </div>
       <div class="absolute inset-x-0 mb-52 bottom-0 z-10 text-center">
-        <h2 class="text-white text-xl md:text-3xl container font-medium drop-shadow-[0_3px_6px_rgba(0,0,0,0.7)]">THE BEST VACATION IN <span class="text-primary">PERU</span> <span class="text-secondary">WITH THE BEST</span> PERUVIAN OPERATOR</h2>
+        <h2 class="text-white text-xl md:text-3xl container font-medium drop-shadow-[0_3px_6px_rgba(0,0,0,0.7)]">THE BEST VACATION IN <span class="text-primary">ECUADOR</span> <span class="text-secondary">WITH THE BEST</span> ECUATORIAN OPERATOR</h2>
 
         <!--        <InquireHome></InquireHome>-->
 
@@ -29,12 +29,13 @@
 
   <section class="container grid grid-cols-1 md:grid-cols-4 my-12">
     <div class="text-center w-full col-span-4 items-center text-4xl text-secondary font-semibold gap-2">
-      Peru Travel Packages
+      Ecuador Travel Packages
       <div class="border-4 h-1 w-12 border-primary mx-auto mt-3"></div>
 
     </div>
-    <div class="col-span-4 text-center text-gray-800  mt-4">
-      GOTOPERU is a family-owned company committed to offering the highest level of customer service possible. The personnel at GOTOPERU will ensure that you have an unforgettable vacation. Peru is one of the world's most diversified nations, boasting stunning old cultures and breathtaking natural beauty. Explore the world with GOTOPERU.
+    <div class="col-span-4 text-center text-gray-800  mt-4 ">
+      <p class="flex items-center gap-1 justify-center">Plan your trip to Ecuador with a free video call from an expert! <nuxt-link to="#"><nuxt-img src="/icons/meet.svg" class="h-8 w-8"></nuxt-img></nuxt-link></p>
+      <p class="flex items-center gap-1 justify-center">Or talk to an expert right now to start making plans for your fully customized trip <nuxt-link to="https://api.whatsapp.com/send?phone=12024911478" target="_blank"><nuxt-img src="/icons/whatsapp.svg" class="h-6 w-6"></nuxt-img></nuxt-link></p>
     </div>
   </section>
 
@@ -44,10 +45,9 @@
         <div class="inset-0 flex items-center text-white w-full">
           <div class="w-full grid grid-cols-1 md:grid-cols-6 items-center">
             <div class="p-6 col-span-3 hidden sm:block">
-              <h3 class="font-semibold block text-xl">Your Peruvian Travel Operator</h3>
+              <h3 class="font-semibold block text-xl">Your Ecuatorian Travel Operator</h3>
               <p class="block font-light text-sm leading-6 my-6">
-                Trust our team of local travel experts to plan an unforgettable trip full of must-see attractions and our favorite hidden gems of the land of the Incas. Our peruvian experts have all traveled down the same roads, trains and treks and know what you’re about to experience.
-                Every Peru tour offered is regularly inspected to ensure our travelers have an amazing experience.
+                We are a travel company that focuses on creating customized itineraries. We have a local team of guides, drivers, travel representatives plus partnerships with the best hotels in Ecuador and yachts operating in the Galapagos Islands. This will undoubtedly ensure that your trip is an amazing one. Our website offers many trip models ranging from 5 to 14 or more days. However, if you have specific preferences for alternative destinations or itineraries, we are able to customize them to meet your expectations.We can combine all the available alternatives in Ecuador to create a unique itinerary tailored to your preferences. Feel free to request a quote according to your requirements.
               </p>
 
               <div class="block mt-6">
@@ -67,24 +67,25 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Experts in tailor-made Peru travel</p>
+            Our specialized knowledge enables travelers to immerse themselves in Ecuadorian traditions, lifestyle, and culture in a distinctive manner.</p>
           <p class="flex my-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Headquarters in Cusco, offices in Lima, Arequipa and Tampa,FL.</p>
+            24/7 Support</p>
           <p class="flex my-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Local staff with first-hand South America travel experience</p>
-          <p class="flex my-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            Dedicated to providing personalized, quality service</p>
+            Whether you’ve just booked or are already enjoying your trip, we are here for you.
+          </p>
+<!--          <p class="flex my-4">-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />-->
+<!--            </svg>-->
+<!--            Dedicated to providing personalized, quality service</p>-->
           <div class="block mt-6">
-            <a href="#" class="btn-primary">View More</a>
+            <nuxt-link to="/why-book-with-us" class="btn-primary">View More</nuxt-link>
           </div>
         </div>
       </div>
@@ -144,7 +145,7 @@
       <span class="md:inline-flex inline-block w-5 h-2.5 bg-secondary dark:bg-primary"></span> GET SOCIAL WITH US
 
     </div>
-    <p class="font-light text-lg mt-2">Follow our Peruvian adventures and share your own with us.</p>
+    <p class="font-light text-lg mt-2">Follow our Ecuatorian adventures and share your own with us.</p>
   </section>
 
   <div class="container  my-6">
@@ -191,10 +192,10 @@
     <div class="bg-gray-800 dark:bg-gray-800 text-white dark:bg-opacity-90 p-6 dark:text-gray-50  items-center  md:block">
       <div class="py-12 text-sm">
         <h3 class="font-semibold text-2xl">
-          ABOUT GOTOPERU
+          ABOUT GOTOECUADOR
         </h3>
         <p class="block my-12">
-          We are a travel operator with Headquarters in Cusco City and offices in the main destinations of Peru catering to travelers who want an original, authentic and unforgettable experience at the land of the Incas.
+          We are a travel operator with Headquarters in Cusco City and offices in the main destinations of Ecuador catering to travelers who want an original, authentic and unforgettable experience at the land of the Incas.
         </p>
 
         <h3 class="font-medium">Personalized Service</h3>
@@ -209,7 +210,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          GOTOPERU is certified by the Peruvian Government, by the Ministry of Foreign Trade and Tourism of Peru (MINCETUR) . In addition we are also highly rated on Tripadvisor, Trustpilot and diverse well known travel forums.
+          GOTOECUADOR is certified by the ECUATORIAN Government, by the Ministry of Foreign Trade and Tourism of ECUADOR (MINCETUR) . In addition we are also highly rated on Tripadvisor, Trustpilot and diverse well known travel forums.
         </p>
       </div>
     </div>
@@ -224,7 +225,7 @@
     <div class=" mb-3 container sm:mt-0 items-center text-2xl text-gray-700 dark:text-secondary font-bold gap-2 hidden  md:flex">
       <div class="">
         <span class="hidden md:inline-flex  w-5 h-2.5 bg-secondary dark:bg-primary"></span>
-      </div> Peru Travel Information
+      </div> ECUADOR Travel Information
     </div>
     <div class="hidden md:block">
       <section class="grid grid-cols-1 md:grid-cols-5 container gap-4">
@@ -239,7 +240,7 @@
               <span class="inline-block w-10 h-2 bg-secondary dark:bg-primary"></span>
             </div>
             <p class="block my-12">
-              “At GOTOPERU, we are guided by a set of core values — quality, passion, trust and personal service : and we guarantee that these hallmarks will be met every day during your vacation in Peru".
+              “At GOTOECUADOR, we are guided by a set of core values — quality, passion, trust and personal service : and we guarantee that these hallmarks will be met every day during your vacation in ECUADOR".
             </p>
             <a href="#" class="btn-primary">View All</a>
           </div>

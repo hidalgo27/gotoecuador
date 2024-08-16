@@ -21,7 +21,7 @@
                 <nuxt-img src="/images/icons/trusted.jpg" alt="" class="w-full"></nuxt-img>
               </div>
               <div class="col-span-4 p-3 text-gray-500">
-                <h3 class="truncate font-bold text-sm">Trusted local Peru travel experts</h3>
+                <h3 class="truncate font-bold text-sm">Trusted local Ecuador travel experts</h3>
                 <p class="text-xs">Professional service from trusted local experts</p>
               </div>
             </div>
