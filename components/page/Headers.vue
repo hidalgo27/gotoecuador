@@ -92,11 +92,11 @@
             <template #popper>
               <!--            <button v-close-popper>Close</button>-->
               <div class="flex flex-col-reverse divide-y divide-y-reverse  text-sm">
-                <nuxt-link v-close-popper to="/why-book-with-us" class="menu-list-m !p-4" active-class="active">Why book with us</nuxt-link>
-                <nuxt-link v-close-popper to="/travel-with-confidence" class="menu-list-m !p-4" active-class="active">Travel with confidence</nuxt-link>
-                <nuxt-link v-close-popper to="/booking-terms-and-conditions" class="menu-list-m !p-4" active-class="active">booking terms and conditions</nuxt-link>
-                <nuxt-link v-close-popper to="/about-us" class="menu-list-m !p-4" active-class="active">About us</nuxt-link>
-                <nuxt-link v-close-popper to="/frequently-asked-questions" class="menu-list-m !p-4" active-class="active">frequently Asked Questions</nuxt-link>
+                <nuxt-link to="/why-book-with-us" class="menu-list-m  !p-4" active-class="active">Why book with us</nuxt-link>
+                <nuxt-link to="/travel-with-confidence" class="menu-list-m  !p-4" active-class="active">Travel with confidence</nuxt-link>
+                <nuxt-link to="/booking-terms-and-conditions" class="menu-list-m  !p-4" active-class="active">booking terms and conditions</nuxt-link>
+                <nuxt-link to="/about-us" class="menu-list-m  !p-4" active-class="active">About us</nuxt-link>
+                <nuxt-link to="/frequently-asked-questions" class="menu-list-m  !p-4" active-class="active">frequently Asked Questions</nuxt-link>
               </div>
             </template>
           </VDropdown>

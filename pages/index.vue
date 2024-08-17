@@ -60,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div class="md:col-span-2 bg-gray-800 p-9 font-light shadow-lg text-white dark:bg-gray-700 dark:bg-opacity-90 dark:text-gray-50 flex items-center">
+      <div class="md:col-span-2 bg-gray-800 p-9 font-light shadow-lg text-white flex items-center">
         <div class="">
           <h3 class="font-semibold block text-xl">WHY BOOK WITH US</h3>
           <p class="flex my-4">
@@ -97,9 +97,9 @@
       Most Popular Travel Packages
       <div class="border-4 h-1 w-12 border-primary mx-auto mt-3"></div>
     </div>
-    <div class="grid grid-cols-4">
-      <div class="col-start-2 col-span-2">
-        <div class="grid grid-cols-3 md:grid-cols-8 text-center">
+    <div class="grid grid-cols-10 sm:grid-cols-6">
+      <div class="col-start-2 col-span-8 sm:col-start-2 sm:col-span-4">
+        <div class="grid grid-cols-4 md:grid-cols-8 text-center gap-2">
           <div>
             <nuxt-img src="/images/include/assistances.png" alt="" class="px-4"></nuxt-img>
             <p class="text-xs">Assistances</p>
@@ -148,7 +148,7 @@
     <p class="font-light text-lg mt-2">Follow our Ecuatorian adventures and share your own with us.</p>
   </section>
 
-  <div class="container  my-6">
+  <div class="container hidden sm:block  my-6">
     <div class="grid grid-cols-7 items-center text-2xl text-gray-700 font-bold gap-3">
       <div class="border dark:border-gray-700">
         <a href="https://www.instagram.com/goto.peru/" target="_blank">
@@ -214,7 +214,7 @@
         </p>
       </div>
     </div>
-    <div class="bg-primary text-white dark:bg-gray-800 dark:bg-opacity-90  dark:text-gray-50 flex items-end">
+    <div class="bg-primary text-white flex items-end">
       <nuxt-img src="images/team/men1.webp" alt="" class="mx-auto w-1/2 pt-4"></nuxt-img>
       <div class="text-center">
       </div>

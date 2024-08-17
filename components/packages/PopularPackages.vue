@@ -2,7 +2,7 @@
   <div>
 
   <div class="container">
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
       <div class="group border  block hover:shadow  overflow-hidden text-center transition duration-500" v-for="(packages, index) in listPackages" :key="index">
         <div class="overflow-hidden relative">
           <div class="relative">
