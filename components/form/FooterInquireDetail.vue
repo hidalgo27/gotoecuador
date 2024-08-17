@@ -236,9 +236,9 @@ onMounted(async () => {
                 </div>
                 <div class="col-span-12 md:col-span-10 grid grid-cols-3 gap-3 overflow-x-scroll focus:touch-pan-x">
 
-                <div class="flex flex-col bg-white rounded-sm">
+                <div class="flex flex-col rounded-sm">
                   <input type="checkbox" id="hotel_5" class="peer hidden" value="5" v-model="hotel" />
-                  <label for="hotel_5" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                  <label for="hotel_5" class="select-none bg-white cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                     <div class="pb-1">
                       <!--                      <img src="/icons/hotel.svg" alt="">-->
                       <h4 class=" pt-1 text-center">Luxury</h4>
@@ -251,9 +251,9 @@ onMounted(async () => {
                   </label>
                 </div>
 
-                <div class="flex flex-col bg-white rounded-sm">
+                <div class="flex flex-col rounded-sm">
                   <input type="checkbox" id="hotel_4" class="peer hidden" value="4" v-model="hotel" />
-                  <label for="hotel_4" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                  <label for="hotel_4" class="select-none bg-white cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                     <div class="pb-1">
                       <!--                      <img src="/icons/hotel.svg" alt="">-->
                       <h4 class=" pt-1 text-center">Superior</h4>
@@ -266,9 +266,9 @@ onMounted(async () => {
                   </label>
                 </div>
 
-                <div class="flex flex-col bg-white rounded-sm">
+                <div class="flex flex-col rounded-sm">
                   <input type="checkbox" id="hotel_3" class="peer hidden" value="3" v-model="hotel" />
-                  <label for="hotel_3" class="select-none cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                  <label for="hotel_3" class="select-none bg-white cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                     <div class="pb-1">
                       <!--                      <img src="/icons/hotel.svg" alt="">-->
                       <h4 class=" pt-1 text-center">Best Value</h4>

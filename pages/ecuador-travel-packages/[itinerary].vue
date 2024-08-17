@@ -21,7 +21,7 @@ const listTeam = ref([])
 const breakpoints = {
   // 500px and up
   350: {
-    itemsToShow: 1.2,
+    itemsToShow: 1,
     snapAlign: 'start',
   },
   // 700px and up
@@ -330,7 +330,7 @@ onMounted(async () => {
               <div v-for="(destination, index) in p = packages.paquetes_destinos" :key="destination.id">
 
                 <div class="relative">
-                  <img :src="destination.destinos.imagen" alt="" class=" h-full object-cover rounded-xl shadow-xl">
+                  <img :src="destination.destinos.imagen" alt="" class=" w-full object-cover rounded-xl shadow-xl">
                   <div class="absolute inset-x-0 bottom-0 p-3 text-white bg-gradient-to-t from-gray-800 rounded-b-xl">
                     {{destination.destinos.nombre}}
                   </div>
