@@ -16,7 +16,7 @@
         </div>
   </header>
   <section class="container py-12 text-gray-500 text-center">
-    <p>Experience Peru with an award-winning team on a completely customized, private or small group tour for an authentic trip of a lifetime. With our 97% satisfaction rate, round-the-clock local support and 100% financial protection, explore 20+ enchanting destinations around the land of the Incas safely and seamlessly. Our 9,000+ enchanted guests will vouch for us.</p>
+    <p>Experience Ecuador with an award-winning team on a completely customized, private or small group tour for an authentic trip of a lifetime. With our 97% satisfaction rate, round-the-clock local support and 100% financial protection, explore 20+ enchanting destinations around the land of the Incas safely and seamlessly. Our 9,000+ enchanted guests will vouch for us.</p>
     <div class="text-gray-600 text-xl font-medium">
       We will work according to your agenda and travel interests to build together the most exclusive travel plans.
     </div>

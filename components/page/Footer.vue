@@ -12,7 +12,7 @@
       <div class="grid grid-cols-2 gap-4 dark:text-gray-300 md:grid-cols-5 mb-24 hidden">
         <div>
           <p class="font-semibold tracking-wide text-secondary mb-6">
-            Peru Travel Packages
+            Ecuador Travel Packages
           </p>
           <ul class="mt-2 space-y-2">
             <li>

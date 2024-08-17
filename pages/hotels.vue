@@ -12,7 +12,7 @@
   </section>
 
   <section class="container py-12 text-gray-500 text-center">
-    <p>GOTOPERU have handpicked the best hotels in each category, taking the following factors: great location, prime facilities and excellent service. Also if you have a preferred hotel we can consider it too, our volume lets us have special deals with them, savings that we translate to our travel packages.</p>
+    <p>GOTOECUADOR have handpicked the best hotels in each category, taking the following factors: great location, prime facilities and excellent service. Also if you have a preferred hotel we can consider it too, our volume lets us have special deals with them, savings that we translate to our travel packages.</p>
   </section>
 
   <div class="container">

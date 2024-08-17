@@ -55,7 +55,7 @@
               </div>
               <div class="col-span-4 p-3 text-gray-500">
                 <h3 class="truncate font-bold text-sm">Hassle-free experience</h3>
-                <p class="text-xs">We plan and book your entire Peru trip before you arrive.</p>
+                <p class="text-xs">We plan and book your entire Ecuador trip before you arrive.</p>
               </div>
             </div>
           </slide>
@@ -77,7 +77,7 @@
               </div>
               <div class="col-span-4 p-3 text-gray-500">
                 <h3 class="truncate font-bold text-sm">Hospitality at its finest</h3>
-                <p class="text-xs">Peruvian hospitality is worldwide known and we are proof of that.</p>
+                <p class="text-xs">Ecuatorian hospitality is worldwide known and we are proof of that.</p>
               </div>
             </div>
           </slide>

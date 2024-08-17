@@ -20,7 +20,7 @@
     </div>
     <div class="bg-gray-50 hidden sm:block">
       <nav class="container flex justify-center text-center">
-        <nuxt-link to="/ecuador-travel-packages" class="menu-list" active-class="active">Peru Travel Packages</nuxt-link>
+        <nuxt-link to="/ecuador-travel-packages" class="menu-list" active-class="active">Ecuador Travel Packages</nuxt-link>
         <nuxt-link to="/destinations" class="menu-list" active-class="active">Destinations</nuxt-link>
 <!--        <nuxt-link to="/hotels" class="menu-list" active-class="active">hotel</nuxt-link>-->
         <!--      <nuxt-link to="/#top-12" class="flex gap-2 items-center"><img src="/icons/star.svg"> Top tours</nuxt-link>-->

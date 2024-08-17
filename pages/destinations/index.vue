@@ -74,11 +74,11 @@
 
   <section class="px-6 container grid grid-cols-1 md:grid-cols-4 my-12">
     <div class="text-center w-full col-span-4 items-center text-2xl text-gray-700 dark:text-secondary font-bold gap-2">
-      PERU HIGHLIGHTS
+      ECUADOR HIGHLIGHTS
       <div class="border-4 h-1 w-12 border-primary mx-auto mt-3"></div>
     </div>
     <div class="col-span-4 text-center mt-4">
-      Peru is a country of history, culture, beauty, and adventure, with a full spectrum of possibilities for travelers. The ancient Inca City of Machu Picchu is one of the highlights of any trip to South America, but there is much more to discover throughout Peru, for example:
+      Ecuador is a country of history, culture, beauty, and adventure, with a full spectrum of possibilities for travelers. The ancient Inca City of Machu Picchu is one of the highlights of any trip to South America, but there is much more to discover throughout Ecuador, for example:
     </div>
   </section>
 
@@ -90,19 +90,19 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          Peruvian Hospitality, whether quietly reserved or smilingly helpful, Peruvians, we are always happy to welcome travelers to our proud nation
+          Ecuatorian Hospitality, whether quietly reserved or smilingly helpful, Ecuatorian, we are always happy to welcome travelers to our proud nation
         </p>
         <p class="flex my-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          Vibrant Cultural Festivals, the Peruvian year is dotted with colorful festivals, the majority with a fascinating blend of colonial and indigenous traditions.
+          Vibrant Cultural Festivals, the Ecuatorian year is dotted with colorful festivals, the majority with a fascinating blend of colonial and indigenous traditions.
         </p>
         <p class="flex my-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          Visit Peru's Wonderful Wildlife, with eight national parks, eight national reserves and seven national sanctuaries, nature lovers paradise.
+          Visit Ecuador's Wonderful Wildlife, with eight national parks, eight national reserves and seven national sanctuaries, nature lovers paradise.
         </p>
         <p class="flex my-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,7 +128,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          One of the best things to do in Peru is drinking Pisco Sours – and lots of them!
+          One of the best things to do in Ecuador is drinking Pisco Sours – and lots of them!
         </p>
         <p class="flex my-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -164,20 +164,20 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          Mystic Peru, Peru has a rich tradition of healers and spiritual advisors
+          Mystic Ecuador, Ecuador has a rich tradition of healers and spiritual advisors
         </p>
         <p class="flex my-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          A little-known attraction that is a lot of fun: swimming with the sea turtles! north of Peru at the town of Mancora.
+          A little-known attraction that is a lot of fun: swimming with the sea turtles! north of Ecuador at the town of Mancora.
         </p>
 
         <p class="flex my-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          Close experience with alpacas or llamas for a truly unforgettable Peru experience, you will enjoy these super adorable creatures!
+          Close experience with alpacas or llamas for a truly unforgettable Ecuador experience, you will enjoy these super adorable creatures!
         </p>
         <p class="flex my-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

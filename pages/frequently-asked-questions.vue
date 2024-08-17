@@ -1,7 +1,7 @@
 <template>
   <section class="container py-12 text-gray-500 text-center">
     <h1 class="text-5xl mb-8 font-semibold ">Frequently asked questions</h1>
-    <p class="text-gray-600 text-xl font-medium">A trip to Peru is an exciting adventure! There are a number of common questions first-time travelers to Peru frequently ask.</p>
+    <p class="text-gray-600 text-xl font-medium">A trip to Ecuador is an exciting adventure! There are a number of common questions first-time travelers to Ecuador frequently ask.</p>
   </section>
 
   <section class="container">
