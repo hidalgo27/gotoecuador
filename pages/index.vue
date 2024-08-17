@@ -99,7 +99,7 @@
     </div>
     <div class="grid grid-cols-10 sm:grid-cols-6">
       <div class="col-start-2 col-span-8 sm:col-start-2 sm:col-span-4">
-        <div class="grid grid-cols-4 md:grid-cols-8 text-center gap-2">
+        <div class="grid grid-cols-4 md:grid-cols-7 text-center gap-2">
           <div>
             <nuxt-img src="/images/include/assistances.png" alt="" class="px-4"></nuxt-img>
             <p class="text-xs">Assistances</p>
@@ -124,10 +124,10 @@
             <nuxt-img src="/images/include/tours.png" alt="" class="px-4"></nuxt-img>
             <p class="text-xs">Tours</p>
           </div>
-          <div>
-            <nuxt-img src="/images/include/trains.png" alt="" class="px-4"></nuxt-img>
-            <p class="text-xs">Trains</p>
-          </div>
+<!--          <div>-->
+<!--            <nuxt-img src="/images/include/trains.png" alt="" class="px-4"></nuxt-img>-->
+<!--            <p class="text-xs">Trains</p>-->
+<!--          </div>-->
           <div>
             <nuxt-img src="/images/include/transfers.png" alt="" class="px-4"></nuxt-img>
             <p class="text-xs">Transfers</p>
@@ -195,7 +195,7 @@
           ABOUT GOTOECUADOR
         </h3>
         <p class="block my-12">
-          We are a travel operator with Headquarters in Cusco City and offices in the main destinations of Ecuador catering to travelers who want an original, authentic and unforgettable experience at the land of the Incas.
+          We are a travel operator with Headquarters in Quito City and offices in the main destinations of Ecuador catering to travelers who want an original, authentic and unforgettable experience at the land of the Incas.
         </p>
 
         <h3 class="font-medium">Personalized Service</h3>

@@ -607,7 +607,7 @@ onMounted(async () => {
         </div>
         <div class="grid grid-cols-6 gap-4">
           <div class="col-start-2 col-span-4">
-            <div class="grid grid-cols-3 md:grid-cols-8 content-center text-center">
+            <div class="grid grid-cols-3 md:grid-cols-7 content-center text-center">
               <div class="">
                 <img src="/images/include/assistances.png" alt="" class="object-contain px-4 text-center">
                 <p class="text-xs">Assistances</p>
@@ -629,10 +629,10 @@ onMounted(async () => {
                 <img src="/images/include/tours.png" alt="" class="object-contain px-4 text-center">
                 <p class="text-xs">Tours</p>
               </div>
-              <div class="">
-                <img src="/images/include/trains.png" alt="" class="object-contain px-4 text-center">
-                <p class="text-xs">Trains</p>
-              </div>
+<!--              <div class="">-->
+<!--                <img src="/images/include/trains.png" alt="" class="object-contain px-4 text-center">-->
+<!--                <p class="text-xs">Trains</p>-->
+<!--              </div>-->
               <div class="">
                 <img src="/images/include/transfers.png" alt="" class="object-contain px-4 text-center">
                 <p class="text-xs">Transfers</p>
