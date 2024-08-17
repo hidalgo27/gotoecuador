@@ -38,3 +38,22 @@
     border-b-4
     border-primary
 }
+
+.menu-list-m {
+    @apply
+    py-2
+    bg-gray-50
+    border-b-4
+    border-white
+    border-opacity-10
+    text-gray-500
+    text-sm
+    transition duration-500
+}
+
+.menu-list-m.active{
+    @apply
+    bg-white
+    border-b-4
+    border-primary
+}

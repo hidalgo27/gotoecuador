@@ -43,19 +43,19 @@
     <div class="container  grid grid-cols-1 md:grid-cols-6 items-end">
       <div class="md:col-span-4 relative bg-gray-700">
         <div class="inset-0 flex items-center text-white w-full">
-          <div class="w-full grid grid-cols-1 md:grid-cols-6 items-center">
-            <div class="p-6 col-span-3 hidden sm:block">
+          <div class="w-full grid grid-cols-1 md:grid-cols-6 items-end">
+            <div class="py-12 col-span-3 hidden sm:block">
               <h3 class="font-semibold block text-xl">Your Ecuatorian Travel Operator</h3>
               <p class="block font-light text-sm leading-6 my-6">
                 We are a travel company that focuses on creating customized itineraries. We have a local team of guides, drivers, travel representatives plus partnerships with the best hotels in Ecuador and yachts operating in the Galapagos Islands. This will undoubtedly ensure that your trip is an amazing one. Our website offers many trip models ranging from 5 to 14 or more days. However, if you have specific preferences for alternative destinations or itineraries, we are able to customize them to meet your expectations.We can combine all the available alternatives in Ecuador to create a unique itinerary tailored to your preferences. Feel free to request a quote according to your requirements.
               </p>
 
-              <div class="block mt-6">
+              <div class="block my-6">
                 <a href="#" class="btn-secondary">View Tours</a>
               </div>
             </div>
             <div class="col-span-3 pt-0 sm:pt-12">
-              <nuxt-img src="/images/banners/joana.png" class="w-3/4 sm:w-auto mx-auto" alt=""></nuxt-img>
+              <nuxt-img src="/images/team/women1.webp" class="w-1/2  mx-auto" alt=""></nuxt-img>
             </div>
           </div>
         </div>
@@ -215,9 +215,16 @@
       </div>
     </div>
     <div class="bg-primary text-white dark:bg-gray-800 dark:bg-opacity-90  dark:text-gray-50 flex items-end">
-      <nuxt-img src="images/team/fiore.png" alt="" class="mx-auto w-3/5"></nuxt-img>
+      <nuxt-img src="images/team/men1.webp" alt="" class="mx-auto w-1/2 pt-4"></nuxt-img>
       <div class="text-center">
       </div>
+    </div>
+  </section>
+
+
+  <section class="container">
+    <div class=" mb-12">
+      <div class="elfsight-app-5eb4043b-fced-4876-890c-bcac70bb6720" data-elfsight-app-lazy></div>
     </div>
   </section>
 
@@ -270,6 +277,12 @@ const getPackage = async () => {
 
 onMounted(async () => {
   await getPackage()
+  if (process.client) {
+    // @ts-ignore
+    import('https://static.elfsight.com/platform/platform.js').then((module) => {
+
+    });
+  }
 })
 
 </script>

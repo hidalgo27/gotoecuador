@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Headers></Headers>
+    <Headers class="sticky top-0 sm:relative z-50"></Headers>
 
     <slot/>
 

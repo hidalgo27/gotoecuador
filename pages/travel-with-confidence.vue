@@ -15,7 +15,7 @@
     <h2 class="text-center font-bold text-gray-500 md:text-2xl mb-12 xl:text-4xl dark:text-secondary">What we’re doing for your wellbeing</h2>
     <div class="grid grid-cols-1 md:grid-cols-5 border mb-6">
       <div class="col-span-2">
-        <nuxt-img src="/images/banners/confidence/angi.jpg" alt="" class="object-cover h-full w-full"></nuxt-img>
+        <nuxt-img src="/images/banners/confidence/gotolatam-3.webp" alt="" class="object-cover h-full w-full"></nuxt-img>
       </div>
       <div class="col-span-3 p-12">
         <h3 class="font-bold text-gray-500 pb-4 text-xl dark:text-white">Health and hygiene processes</h3>
@@ -58,7 +58,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-5 border mb-6">
       <div class="col-span-2">
-        <nuxt-img src="/images/banners/confidence/experienced-tour-guides.jpg" alt="" class="object-cover h-full w-full"></nuxt-img>
+        <nuxt-img src="/images/banners/confidence/gotoecuador-1.webp" alt="" class="object-cover h-full w-full"></nuxt-img>
       </div>
       <div class="col-span-3 p-12">
         <h3 class="font-bold text-gray-500 pb-4 text-xl dark:text-white">Experienced tour guides</h3>
@@ -69,7 +69,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-5 border mb-6">
       <div class="col-span-2">
-        <nuxt-img src="images/banners/confidence/team-goto.jpg" alt="" class="object-cover h-full w-full"></nuxt-img>
+        <nuxt-img src="images/banners/confidence/gotoecuador-2.webp" alt="" class="object-cover h-full w-full"></nuxt-img>
       </div>
       <div class="col-span-3 p-12">
         <h3 class="font-bold text-gray-500 pb-4 text-xl dark:text-white">Detailed travel docs</h3>
@@ -80,7 +80,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-5 border mb-6">
       <div class="col-span-2">
-        <nuxt-img src="/images/banners/confidence/24.jpg" alt="" class="object-cover h-full w-full"></nuxt-img>
+        <nuxt-img src="/images/banners/confidence/gotoecuador-4.webp" alt="" class="object-cover h-full w-full"></nuxt-img>
       </div>
       <div class="col-span-3 p-12">
         <h3 class="font-bold text-gray-500 pb-4 text-xl dark:text-white">24/7 support</h3>

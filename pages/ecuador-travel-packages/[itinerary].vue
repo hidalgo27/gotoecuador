@@ -243,7 +243,7 @@ onMounted(async () => {
   await getPackageItinerary(route.params.itinerary)
   listPackages.value.forEach(p => {
     // @ts-ignore
-    showCount.value[p.id] = 8;
+    showCount.value[p.id] = 15;
   });
 
   // await nextTick();

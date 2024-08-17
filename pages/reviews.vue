@@ -6,7 +6,7 @@
 <!--    </div>-->
 <!--  </section>-->
   <header class="h-[75vh] 2xl:h-[60vh] relative">
-    <nuxt-img src="/images/team/banner4.avif" :placeholder="[50, 25, 75, 5]" alt="" class="object-cover w-screen h-full"></nuxt-img>
+    <nuxt-img src="/images/team/gotoecuador-team1.webp" :placeholder="[50, 25, 75, 5]" alt="" class="object-cover w-screen h-full"></nuxt-img>
         <div class="absolute inset-x-0 bottom-0">
           <div class="container">
             <h1 class="text-4xl py-6 font-semibold text-gray-50">
@@ -24,7 +24,7 @@
 
 
 
-  <section class="container hidden md:block mt-6">
+  <section class="container mt-6">
 
 
     <div class="mt-6 dark:bg-primary text-white mb-6">

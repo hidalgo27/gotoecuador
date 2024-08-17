@@ -1,6 +1,6 @@
 <template>
   <header class="h-[75vh] 2xl:h-[60vh] relative">
-    <nuxt-img src="/images/team/banner2.avif" :placeholder="[50, 25, 75, 5]" alt="" class="object-cover w-screen h-full"></nuxt-img>
+    <nuxt-img src="/images/team/gotoecuador-team3.webp" :placeholder="[50, 25, 75, 5]" alt="" class="object-cover w-screen h-full"></nuxt-img>
     <div class="absolute inset-x-0 bottom-0">
       <div class="container">
         <h1 class="text-4xl py-6 font-semibold text-gray-50">
@@ -12,7 +12,7 @@
 
   <section class="my-12 container">
 
-      <div class="grid grid-cols-2 items-center  gap-24">
+      <div class="grid md:grid-cols-2 grid-cols-1 items-center  gap-24">
 
           <div class="columns-2 space-y-4 gap-3">
             <img src="/images/home/operator1.png" alt="" class="">
