@@ -7,6 +7,10 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      title: 'Ecuador Travel Packages',
+      // meta: [
+      //   { name: 'description', content: 'My amazing site.' }
+      // ],
       script: [ { src: 'https://cdn.wetravel.com/widgets/embed_checkout.js' } ],
       link: [
         { rel: 'apple-touch-icon', sizes: '48x48', href: '/favicon/favicon.png' },
