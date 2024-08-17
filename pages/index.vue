@@ -3,6 +3,7 @@
     <div class="relative">
       <div class="h-[75vh] relative overflow-hidden vimeo-wrapper ">
         <div class="absolute bg-gradient-to-t from-gray-800 h-[75vh] opacity-20 z-10 inset-0"></div>
+        <nuxt-img src="/images/logos/logo-gotoecuador3.svg" class="w-[350px] z-10 relative mx-auto sm:hidden p-6"></nuxt-img>
         <iframe src="https://player.vimeo.com/video/996360304?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" frameborder="0" allow="autoplay; fullscreen" class=""></iframe>
       </div>
       <div class="absolute inset-x-0 mb-52 bottom-0 z-10 text-center">
