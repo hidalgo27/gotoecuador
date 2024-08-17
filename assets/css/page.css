@@ -24,10 +24,10 @@
     hover:opacity-100
     hover:text-gray-800
     hover:border-primary
-    dark:hover:bg-gray-900
-    dark:hover:text-gray-200
-    dark:bg-gray-800
-    dark:border-gray-800
+    /*dark:hover:bg-gray-900*/
+    /*dark:hover:text-gray-200*/
+    /*dark:bg-gray-800*/
+    /*dark:border-gray-800*/
     transition duration-500
     sm:px-6;
 }

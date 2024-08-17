@@ -1,14 +1,15 @@
 <template>
-  <footer class="relative bg-gray-800 dark:bg-gray-800 text-gray-500 dark:text-gray-50 pb-16">
+  <footer class="relative bg-gray-800 text-gray-500 pb-16">
     <div class="container pt-12">
-      <div class="text-center mb-20">
+      <div class="text-center mb-10">
         <a href="/public" aria-label="Go home" title="Company" class="inline-flex items-center">
-          <img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-white.png" alt="" class="mx-auto">
+<!--          <img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-white.png" alt="" class="mx-auto">-->
+          <nuxt-img src="/images/logos/logo-gotoecuador3.svg" class="w-[250px] md:w-[320px] mx-auto"></nuxt-img>
         </a>
       </div>
 
 
-      <div class="grid grid-cols-2 gap-4 dark:text-gray-300 md:grid-cols-5 mb-24">
+      <div class="grid grid-cols-2 gap-4 dark:text-gray-300 md:grid-cols-5 mb-24 hidden">
         <div>
           <p class="font-semibold tracking-wide text-secondary mb-6">
             Peru Travel Packages
