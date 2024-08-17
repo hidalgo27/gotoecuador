@@ -7,6 +7,7 @@
       <FormFooterInquireDetail></FormFooterInquireDetail>
     </section>
     <Footer></Footer>
+    <Float></Float>
   </div>
 </template>
 
@@ -14,4 +15,5 @@
 
 import Headers from "~/components/page/Headers.vue";
 import Footer from "~/components/page/Footer.vue";
+import Float from "~/components/page/Float.vue";
 </script>

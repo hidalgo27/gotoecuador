@@ -91,7 +91,7 @@
 
           </div>
 
-          <div class="font-bold text-gray-500 dark:text-gray-300 text-lg mb-4 flex justify-center gap-1">
+          <div class="font-bold text-gray-500 text-lg mb-4 flex justify-center gap-1">
             {{packages.duracion}} days /
 
             <div v-if="packages.is_p_t == 0">
