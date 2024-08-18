@@ -15,17 +15,18 @@
       <div class="grid md:grid-cols-2 grid-cols-1 items-center  gap-24">
 
           <div class="columns-2 space-y-4 gap-3">
-            <img src="/images/home/operator1.png" alt="" class="">
-            <img src="/images/home/operator2.png" alt="" class="">
-            <img src="/images/home/operator3.png" alt="" class="">
-            <img src="/images/home/operator4.png" alt="" class="">
+            <img src="/images/home/operator9.webp" alt="" class="rounded-2xl bg-primary">
+            <img src="/images/home/operator10.webp" alt="" class="rounded-2xl bg-secondary">
+            <img src="/images/home/operator11.webp" alt="" class="rounded-2xl bg-gray-700">
+            <img src="/images/home/operator8.webp" alt="" class="rounded-2xl">
           </div>
 
 
         <article>
           <h2 class="text-3xl font-bold mb-6">About GotoEcuador Team</h2>
-          <p class="mb-3">We are more than just a travel platform. Our GotoEcuador family has a great knowledge of customized tours in Latin America. With a deep passion for exploration, cultural exchange, and responsible tourism, we have embarked on a journey to generate unforgettable experiences that transcend borders and leave a positive impact.</p>
-          <p class="mb-3">What distinguishes us is our deep commitment to creating customized itineraries that respond to your particular interests and desires. Whether you're an adventure seeker, a history enthusiast, a culinary explorer, or simply looking to unwind in breathtaking landscapes, our experienced travel experts design tailor-made journeys that reflect your spirit of adventure.</p>
+          <p class="mb-3">Gotoecuador is a travel agency operated by passionate local ecuatorians,  from our drivers, guides, office representatives and more...</p>
+          <p class="mb-3">Throughout the course of our fourteen years in business, we have made a name for ourselves as one of Ecuador's top travel companies and tour guides.</p>
+          <p>Above all, we take great satisfaction in offering individualized service and employing a group of knowledgeable local travel advisors who are familiar with the entire nation.</p>
         </article>
       </div>
 

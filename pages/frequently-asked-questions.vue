@@ -16,8 +16,7 @@
 <!--        </svg>-->
       </header>
       <div class="bg-white py-2 px-4 border mt-1">
-        <div class="grid grid-cols-1 gap-2 text-sm" v-html="faq.descripcion">
-        </div>
+        <div class="grid grid-cols-1 gap-2 text-sm list-disc" v-html="faq.descripcion"></div>
       </div>
     </article>
 

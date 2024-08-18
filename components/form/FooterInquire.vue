@@ -1,6 +1,6 @@
 <template>
 
-  <div class="container md:w-1/2 2xl:w-1/3 my-24" id="form-dream-adventure">
+  <div class="container w-full md:w-[800px] my-24" id="form-dream-adventure">
     <div class="w-full">
       <div class="grid grid-cols-1">
 

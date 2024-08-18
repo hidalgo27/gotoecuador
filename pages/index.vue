@@ -56,7 +56,7 @@
               </div>
             </div>
             <div class="col-span-3 pt-4 sm:pt-12">
-              <nuxt-img src="/images/team/women1.webp" class="w-1/2  mx-auto" alt=""></nuxt-img>
+              <nuxt-img src="/images/team/women1.webp" class="w-[200px] sm:w-[280px] mx-auto" alt=""></nuxt-img>
             </div>
           </div>
         </div>
