@@ -109,7 +109,7 @@
 
       <div class="flex flex-col justify-between pt-5 border-t border-gray-500 sm:flex-row">
         <p class="text-sm dark:text-gray-300">
-          © Copyright 2022 GotoPeru. All rights reserved. | GOTOPERU COMPANY EIRL  - RUC  20609225441 - Avenida El Sol 449 - Cusco - Cusco - Peru
+          © Copyright 2022 GotoEcuador. All rights reserved. | Avenida La Coruña E12-148 Y Valladolid , Quito 170525, Ecuador
         </p>
         <div class="flex items-center mt-4 space-x-4 sm:mt-0">
         </div>
