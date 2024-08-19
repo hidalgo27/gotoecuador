@@ -229,34 +229,34 @@
     </div>
   </section>
 
-  <section>
-    <div class=" mb-3 container sm:mt-0 items-center text-2xl text-gray-700 dark:text-secondary font-bold gap-2 hidden  md:flex">
-      <div class="">
-        <span class="hidden md:inline-flex  w-5 h-2.5 bg-secondary dark:bg-primary"></span>
-      </div> ECUADOR Travel Information
-    </div>
-    <div class="hidden md:block">
-      <section class="grid grid-cols-1 md:grid-cols-5 container gap-4">
-        <div class="md:col-span-3 relative">
-          <nuxt-img src="images/hotel.jpg" alt="" class="object-cover h-full w-full"></nuxt-img>
-          <div class="absolute inset-0 gradient-cicle-gray"></div>
-        </div>
-        <div class="md:col-span-2 bg-secondary bg-opacity-20 dark:bg-gray-700 dark:bg-opacity-90 p-6 dark:text-gray-50 flex items-center">
-          <div class="">
-            <h3 class="font-semibold text-2xl">Hotels</h3>
-            <div class=" mb-10">
-              <span class="inline-block w-10 h-2 bg-secondary dark:bg-primary"></span>
-            </div>
-            <p class="block my-12">
-              “At GOTOECUADOR, we are guided by a set of core values — quality, passion, trust and personal service : and we guarantee that these hallmarks will be met every day during your vacation in ECUADOR".
-            </p>
-            <a href="#" class="btn-primary">View All</a>
-          </div>
-        </div>
-      </section>
-    </div>
+<!--  <section>-->
+<!--    <div class=" mb-3 container sm:mt-0 items-center text-2xl text-gray-700 dark:text-secondary font-bold gap-2 hidden  md:flex">-->
+<!--      <div class="">-->
+<!--        <span class="hidden md:inline-flex  w-5 h-2.5 bg-secondary dark:bg-primary"></span>-->
+<!--      </div> ECUADOR Travel Information-->
+<!--    </div>-->
+<!--    <div class="hidden md:block">-->
+<!--      <section class="grid grid-cols-1 md:grid-cols-5 container gap-4">-->
+<!--        <div class="md:col-span-3 relative">-->
+<!--          <nuxt-img src="images/hotel.jpg" alt="" class="object-cover h-full w-full"></nuxt-img>-->
+<!--          <div class="absolute inset-0 gradient-cicle-gray"></div>-->
+<!--        </div>-->
+<!--        <div class="md:col-span-2 bg-secondary bg-opacity-20 dark:bg-gray-700 dark:bg-opacity-90 p-6 dark:text-gray-50 flex items-center">-->
+<!--          <div class="">-->
+<!--            <h3 class="font-semibold text-2xl">Hotels</h3>-->
+<!--            <div class=" mb-10">-->
+<!--              <span class="inline-block w-10 h-2 bg-secondary dark:bg-primary"></span>-->
+<!--            </div>-->
+<!--            <p class="block my-12">-->
+<!--              “At GOTOECUADOR, we are guided by a set of core values — quality, passion, trust and personal service : and we guarantee that these hallmarks will be met every day during your vacation in ECUADOR".-->
+<!--            </p>-->
+<!--            <a href="#" class="btn-primary">View All</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
+<!--    </div>-->
 
-  </section>
+<!--  </section>-->
 
 
 
