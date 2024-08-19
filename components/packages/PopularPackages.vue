@@ -12,7 +12,7 @@
           <div class="absolute inset-x-0 bottom-0 w-full p-6">
             <div class="bg-primary bg-opacity-70 text-left p-4 text-gray-50 group-hover:bg-opacity-100 transition duration-500 rounded-lg shadow-xl">
               <h2 class="text-lg font-bold">{{ packages.titulo }}</h2>
-              <div class="flex text-xs font-semibold gap-1 items-center overflow-x-scroll scrollbar-hide  focus:touch-pan-x">
+              <div class="flex text-xs font-semibold gap-1 items-center overflow-x-scroll no-scrollbar  focus:touch-pan-x">
                 <template v-for="(des, index) in packages.paquetes_destinos">
                   {{des.destinos.nombre}}
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-orange-400" v-if="index < packages.paquetes_destinos.length - 1">
