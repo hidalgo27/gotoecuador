@@ -56,7 +56,7 @@
               </div>
             </div>
             <div class="col-span-3 pt-4 sm:pt-12">
-              <nuxt-img src="/images/team/women1.webp" class="w-[200px] sm:w-[280px] mx-auto" alt=""></nuxt-img>
+              <nuxt-img src="/images/team/renzo.webp" class="w-[200px] sm:w-[280px] mx-auto" alt=""></nuxt-img>
             </div>
           </div>
         </div>
@@ -216,7 +216,7 @@
       </div>
     </div>
     <div class="bg-primary text-white flex items-end">
-      <nuxt-img src="images/team/men1.webp" alt="" class="mx-auto w-1/2 pt-4"></nuxt-img>
+      <nuxt-img src="images/team/women1.webp" alt="" class="mx-auto w-1/2 pt-4"></nuxt-img>
       <div class="text-center">
       </div>
     </div>
