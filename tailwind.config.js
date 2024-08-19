@@ -45,5 +45,15 @@ export default {
     },
   },
   plugins: [],
+  corePlugins: {
+    // Desactiva el comportamiento predeterminado del scrollbar
+    scrollbar: false,
+  },
+  // Añade esto para crear la clase personalizada
+  safelist: [
+    {
+      pattern: /scrollbar-hide/,
+    },
+  ],
 }
 
