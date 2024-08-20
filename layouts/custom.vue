@@ -7,7 +7,7 @@
       <FormFooterInquireDetail></FormFooterInquireDetail>
     </section>
     <Footer></Footer>
-    <Float></Float>
+<!--    <Float></Float>-->
   </div>
 </template>
 

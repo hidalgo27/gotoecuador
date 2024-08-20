@@ -26,9 +26,6 @@
   </div>
 </template>
 <script setup lang="ts">
-definePageMeta({
-  layout: 'custom'
-})
 import {usePackageStore} from "~/stores/packages";
 import PopularPackages from "~/components/packages/PopularPackages.vue";
 import Wetravel from "~/components/Wetravel.vue";

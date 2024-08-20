@@ -9,18 +9,18 @@
       </div>
 
 
-      <div class="grid grid-cols-2 gap-4 dark:text-gray-300 md:grid-cols-5 mb-24 hidden">
+      <div class="grid grid-cols-2 gap-4 dark:text-gray-300 md:grid-cols-5 ">
         <div>
           <p class="font-semibold tracking-wide text-secondary mb-6">
-            Ecuador Travel Packages
+            Travel Packages
           </p>
           <ul class="mt-2 space-y-2">
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Multi days</a>
+              <nuxt-link to="/ecuador-travel-packages" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Ecuador Travel Packages</nuxt-link>
             </li>
-            <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Days Tours</a>
-            </li>
+<!--            <li>-->
+<!--              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Days Tours</a>-->
+<!--            </li>-->
 
           </ul>
         </div>
@@ -30,39 +30,39 @@
           </p>
           <ul class="mt-2 space-y-2">
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Cusco</a>
+              <nuxt-link to="/destinations/otavalo" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Otavalo</nuxt-link>
             </li>
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">MachuPicchu</a>
+              <nuxt-link to="/destinations/quito" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Quito</nuxt-link>
             </li>
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Lake Titicaca</a>
+              <nuxt-link to="/destinations/guayaquil" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Guayaquil</nuxt-link>
             </li>
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Colca Canyon</a>
+              <nuxt-link to="/destinations/galapagos" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Galapagos</nuxt-link>
             </li>
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Nazca Lines</a>
+              <nuxt-link to="/destinations" class="transition-colors duration-300 italic underline text-sm text-deep-purple-50 hover:text-teal-accent-400">View Other</nuxt-link>
             </li>
           </ul>
         </div>
-        <div>
-          <p class="font-semibold tracking-wide text-secondary mb-6">Hotels</p>
-          <ul class="mt-2 space-y-2">
-            <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">2 stars</a>
-            </li>
-            <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">3 stars</a>
-            </li>
-            <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">4 stars</a>
-            </li>
-            <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">5 stars</a>
-            </li>
-          </ul>
-        </div>
+<!--        <div>-->
+<!--          <p class="font-semibold tracking-wide text-secondary mb-6">Hotels</p>-->
+<!--          <ul class="mt-2 space-y-2">-->
+<!--            <li>-->
+<!--              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">2 stars</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">3 stars</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">4 stars</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">5 stars</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
 
         <div>
           <p class="font-semibold tracking-wide text-secondary mb-6">
@@ -70,19 +70,19 @@
           </p>
           <ul class="mt-2 space-y-2">
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Why book with us</a>
+              <nuxt-link to="/why-book-with-us" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Why book with us</nuxt-link>
             </li>
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Travel with confidence</a>
+              <nuxt-link to="/travel-with-confidence" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Travel with confidence</nuxt-link>
             </li>
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Booking terms</a>
+              <nuxt-link to="/booking-terms-and-conditions" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Booking terms</nuxt-link>
             </li>
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">About us</a>
+              <nuxt-link to="/about-us" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">About us</nuxt-link>
             </li>
             <li>
-              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">FAQ</a>
+              <nuxt-link to="/frequently-asked-questions" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">FAQ</nuxt-link>
             </li>
           </ul>
         </div>
@@ -92,7 +92,7 @@
           </p>
           <ul>
             <li>
-              <a href="#" target="_blank" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Terms and conditions</a>
+              <a href="/frequently-asked-questions" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Terms and conditions</a>
             </li>
           </ul>
           <p class="font-semibold tracking-wide text-secondary mb-6">
@@ -101,9 +101,12 @@
           <div class="bg-gray-900 p-4 rounded-lg shadow-inner">
             <p class="mb-2 text-gray-300 text-sm">
 
-              CONTACT US: <br> SALES: <br>info@gotoperu.com <br> OPERATIONS 24/7: <br> +51 933358040
+              CONTACT US: <br> SALES: <br>info@gotoperu.com <br> OPERATIONS 24/7: <br> +1 (202) 4911478
             </p>
           </div>
+        </div>
+        <div>
+          <nuxt-img src="/images/team/women2.webp"></nuxt-img>
         </div>
       </div>
 
