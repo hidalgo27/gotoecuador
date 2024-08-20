@@ -3,13 +3,13 @@
     <div class="container pt-12">
       <div class="mb-10 flex items-center justify-center">
         <div>
-          <nuxt-img src="/images/logos/logo-gotoperu.svg" class="h-[14px] md:h-[25px] mx-auto"></nuxt-img>
+          <nuxt-img src="/images/logos/logo-gotoecuador-white.svg" class="h-[14px] md:h-[25px] mx-auto"></nuxt-img>
         </div>
         <div>
           <span class="text-white px-4 text-xs md:text-lg">part of</span>
         </div>
         <div>
-          <nuxt-img src="/images/logos/logo-gotoecuador-white.svg" class="h-[14px] md:h-[25px] mx-auto"></nuxt-img>
+          <nuxt-img src="/images/logos/logo-gotoperu.svg" class="h-[14px] md:h-[25px] mx-auto"></nuxt-img>
         </div>
       </div>
 
