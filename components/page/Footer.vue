@@ -1,11 +1,16 @@
 <template>
   <footer class="relative bg-gray-800 text-gray-500 pb-16">
     <div class="container pt-12">
-      <div class="text-center mb-10">
-        <a href="/public" aria-label="Go home" title="Company" class="inline-flex items-center">
-<!--          <img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-white.png" alt="" class="mx-auto">-->
-          <nuxt-img src="/images/logos/logo-gotoecuador3.svg" class="w-[250px] md:w-[320px] mx-auto"></nuxt-img>
-        </a>
+      <div class="mb-10 flex items-center justify-center">
+        <div>
+          <nuxt-img src="/images/logos/logo-gotoperu.svg" class="h-[14px] md:h-[25px] mx-auto"></nuxt-img>
+        </div>
+        <div>
+          <span class="text-white px-4 text-xs md:text-lg">part of</span>
+        </div>
+        <div>
+          <nuxt-img src="/images/logos/logo-gotoecuador-white.svg" class="h-[14px] md:h-[25px] mx-auto"></nuxt-img>
+        </div>
       </div>
 
 
@@ -106,7 +111,8 @@
           </div>
         </div>
         <div>
-          <nuxt-img src="/images/team/women2.webp"></nuxt-img>
+          <nuxt-img src="/images/team/women2.webp" class="w-[180px] mx-auto"></nuxt-img>
+          <nuxt-link to="#form-dream-adventure" class="btn-secondary block text-center w-full">Contact Us</nuxt-link>
         </div>
       </div>
 

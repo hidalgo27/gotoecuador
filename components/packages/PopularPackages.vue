@@ -9,13 +9,13 @@
             <img :src="packages.imagen" :alt="packages.titulo" class="object-cover h-96 w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"/>
             <div class="absolute inset-0 gradient-cicle-gray"></div>
           </div>
-          <div class="absolute inset-x-0 bottom-0 w-full p-6">
-            <div class="bg-primary bg-opacity-70 text-left p-4 text-gray-50 group-hover:bg-opacity-100 transition duration-500 rounded-lg shadow-xl">
-              <h2 class="text-lg font-bold">{{ packages.titulo }}</h2>
-              <div class="flex text-xs font-semibold gap-1 items-center overflow-x-scroll no-scrollbar  focus:touch-pan-x">
+          <div class="absolute inset-x-0 bottom-0 w-full p-2">
+            <div class="bg-primary bg-opacity-70 text-left p-3 text-gray-50 group-hover:bg-opacity-100 transition duration-500 ">
+              <h2 class="font-semibold">{{ packages.titulo }}</h2>
+              <div class="flex text-xs italic gap-1 items-center overflow-x-scroll no-scrollbar  focus:touch-pan-x">
                 <template v-for="(des, index) in packages.paquetes_destinos">
                   {{des.destinos.nombre}}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-orange-400" v-if="index < packages.paquetes_destinos.length - 1">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-3 h-3 text-orange-400" v-if="index < packages.paquetes_destinos.length - 1">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                   </svg>
 
