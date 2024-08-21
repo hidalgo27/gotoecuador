@@ -1,5 +1,5 @@
 export default defineNuxtPlugin(nuxtApp => {
-	nuxtApp.hooks.hook('vue:setup', () => {
+	nuxtApp.hooks.hook('app:created', () => {
 		const {
 			public: { gtmContainerId },
 		} = useRuntimeConfig()
