@@ -59,7 +59,8 @@ export default defineNuxtConfig({
     public: {
       apiBase: '' || "https://api.gotoecuador.com/api",
       // apiBaseTest: process.env.API_BASE_TEST || "https://app.gotolatam.travel/api",
-      apiBaseTest: ''
+      apiBaseTest: '',
+      gtmContainerId: '',
       // apiBase: process.env.API_BASE_TEST || "http://localhost:8080/api",
     }
   },
