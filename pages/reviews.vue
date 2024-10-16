@@ -27,11 +27,11 @@
   <section class="container mt-6">
 
 
-    <div class="mt-6 dark:bg-primary text-white mb-6">
+    <div class="mt-6 text-white mb-6">
       <div class="elfsight-app-5eb4043b-fced-4876-890c-bcac70bb6720" data-elfsight-app-lazy></div>
     </div>
 
-    <div class="mt-6 dark:bg-primary text-white">
+    <div class="mt-6 text-white">
       <div class="elfsight-app-cfbb45fe-6aae-4647-bd41-811d26479335" data-elfsight-app-lazy></div>
     </div>
 
@@ -48,7 +48,7 @@
     </div>
 
 
-    <div class="mt-6 dark:bg-primary text-white">
+    <div class="mt-6 text-white">
       <div class="elfsight-app-c498a4fd-fc7b-4351-9853-204c13347838" data-elfsight-app-lazy></div>
     </div>
 

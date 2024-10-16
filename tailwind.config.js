@@ -16,21 +16,12 @@ export default {
       fontFamily: {
         'sans': ['"Montserrat"', ...defaultTheme.fontFamily.sans],
       },
-    },
-    colors: {
-      "vtd-primary": colors.sky, // Light mode Datepicker color
-      "vtd-secondary": colors.gray, // Dark mode Datepicker color
-      blue: colors.blue,
-      green: colors.green,
-      red: colors.red,
-      amber: colors.amber,
-      gray: colors.gray,
-      white: colors.white,
-      yellow: colors.yellow,
-      fuchsia: colors.fuchsia,
-      cyan: colors.cyan,
-      primary: '#7D8506',
-      secondary: '#F9A825',
+      colors: {
+        "vtd-primary": colors.sky, // Light mode Datepicker color
+        "vtd-secondary": colors.gray, // Dark mode Datepicker color
+        primary: '#7D8506',
+        secondary: '#F9A825',
+      },
     },
     container: {
       center: true,
@@ -46,4 +37,3 @@ export default {
   },
   plugins: []
 }
-

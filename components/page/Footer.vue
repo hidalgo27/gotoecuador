@@ -106,7 +106,7 @@
           <div class="bg-gray-900 p-4 rounded-lg shadow-inner">
             <p class="mb-2 text-gray-300 text-sm">
 
-              CONTACT US: <br> SALES: <br>info@gotoperu.com <br> OPERATIONS 24/7: <br> +1 (202) 4911478
+              CONTACT US: <br> SALES: <br>info@gotoecuador.com <br> OPERATIONS 24/7: <br> +1 (202) 4911478
             </p>
           </div>
         </div>
