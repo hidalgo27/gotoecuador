@@ -1,6 +1,6 @@
 <template>
   <section class="h-[75vh] 2xl:h-[60vh] relative">
-    <nuxt-img src="/images/team/gotoecuador-team2.webp" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover object-center w-full h-[75vh] 2xl:h-[60vh]"></nuxt-img>
+    <nuxt-img src="/images/banners/banner-cruise-2.png" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover object-center w-full h-[75vh] 2xl:h-[60vh]"></nuxt-img>
 
     <div class="absolute inset-x-0 bottom-0">
       <div class="container">

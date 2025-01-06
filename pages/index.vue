@@ -7,6 +7,7 @@
         <iframe src="https://player.vimeo.com/video/996360304?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" frameborder="0" allow="autoplay; fullscreen" class=""></iframe>
       </div>
       <div class="absolute inset-x-0 mb-52 bottom-0 z-10 text-center">
+
         <h2 class="text-white text-xl md:text-3xl container font-medium drop-shadow-[0_3px_6px_rgba(0,0,0,0.7)]">THE BEST VACATION IN <span class="text-primary">ECUADOR</span> <span class="text-secondary">WITH THE BEST</span> ECUATORIAN OPERATOR</h2>
 
         <!--        <InquireHome></InquireHome>-->
@@ -27,6 +28,9 @@
 <!--  </div>-->
 
   <IconSlider></IconSlider>
+<!--  <div class="flex justify-center">-->
+<!--    <we-travel-widget></we-travel-widget>-->
+<!--  </div>-->
 
   <section class="container grid grid-cols-1 md:grid-cols-4 my-12">
     <div class="text-center w-full col-span-4 items-center text-4xl text-secondary font-semibold gap-2">

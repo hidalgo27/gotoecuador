@@ -2,7 +2,7 @@
   <section class="bg-gray-50 hidden sm:flex">
     <div class="container">
       <div class="w-full my-3 overflow-hidden relative">
-        <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">
+        <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="config.breakpoints" v-bind="config">
           <slide :key="1">
             <div class="grid items-center grid-cols-5 text-left">
               <div class="col-span-1">
@@ -112,22 +112,28 @@
 import 'vue3-carousel/dist/carousel.css'
 import {Carousel, Slide} from "vue3-carousel"
 
-const breakpoints = {
-  // 500px and up
-  350: {
-    itemsToShow: 1.2,
-    snapAlign: 'start',
-  },
-  // 700px and up
-  700: {
-    itemsToShow: 2.2,
-    snapAlign: 'center',
-  },
-  // 1024 and up
-  1024: {
-    itemsToShow: 4.5,
-    snapAlign: 'start',
-  },
+const config = {
+  autoplay: 6000,
+  wrapAround: true,
+  pauseAutoplayOnHover: true,
+  breakpoints : {
+    // 500px and up
+    350: {
+      itemsToShow: 1.2,
+      snapAlign: 'start',
+    },
+    // 700px and up
+    700: {
+      itemsToShow: 2.2,
+      snapAlign: 'center',
+    },
+    // 1024 and up
+    1024: {
+      itemsToShow: 4.5,
+      snapAlign: 'start',
+    }
+  }
 }
+
 
 </script>
