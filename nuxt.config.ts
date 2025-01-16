@@ -30,7 +30,15 @@ export default defineNuxtConfig({
   },
 
   modules: [// needed
-  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt'],
+  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt', '@nuxtjs/device', '@nuxt/scripts', '@samk-dev/nuxt-vcalendar'],
+
+  scripts: {
+    registry: {
+      googleTagManager: {
+        id: 'AW-382248808',
+      }
+    }
+  },
 
   googleFonts: {
     families: {
@@ -57,7 +65,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiSecret: '',
     public: {
-      apiBase: '' || "https://api.gotoecuador.com/api",
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || "https://api.gotoecuador.com/api",
+      apiInquire: process.env.useNuxtApp || "https://api.gotoecuador.com/api/store/inquire",
       // apiBaseTest: process.env.API_BASE_TEST || "https://app.gotolatam.travel/api",
       apiBaseTest: '',
       gtmContainerId: process.env.NUXT_PUBLIC_GTM_CONTAINER_ID || '',

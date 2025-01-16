@@ -176,6 +176,7 @@
           <form @submit.prevent="handleSubmit">
             <div class="grid grid-cols-1 pt-2 gap-3">
               <div class="relative">
+                <div class="relative">
                   <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
                   <input
                       type="text"
@@ -191,6 +192,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                     </svg>
                   </div>
+                </div>
 
                   <div v-if="$v.fullName.$error" class="text-xs text-red-500">El nombre es requerido</div>
 
@@ -199,6 +201,7 @@
               <div class="grid grid-cols-2 gap-3">
 
                 <div class="relative">
+                  <div class="relative">
                   <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
                   <input
                       type="text"
@@ -216,12 +219,14 @@
                   <!--                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />-->
                   <!--                      </svg>-->
                   <!--                    </div>-->
+                  </div>
                   <div v-if="$v.phone.$error" class="text-xs text-red-500">El nombre es requerido</div>
 
                 </div>
 
 
                 <div class="relative">
+                  <div class="relative">
                   <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
 <!--                  <VMenu>-->
 <!--                    <input type="text" class="is-input-ico peer" placeholder=" " v-model="formStore.travelDate" @focus="showModalProcess = true">-->
@@ -236,15 +241,43 @@
 <!--                    </template>-->
 <!--                  </VMenu>-->
 
-                  <vue-tailwind-datepicker as-single  :formatter="formatter" placeholder="Tentative travel date" :disable-date="disablePastDates" v-model="formStore.travelDate" input-classes="is-input-ico peer !pl-3"/>
-                  <label class="is-input-ico-label !pl-0" @click="showModalProcess = true">When</label>
+<!--                  <vue-tailwind-datepicker as-single  :formatter="formatter" placeholder="Tentative travel date" :disable-date="disablePastDates" v-model="travelDate" input-classes="is-input-ico peer !pl-3"/>-->
+<!--                  <label class="is-input-ico-label !pl-0" @click="showModalProcess = true">When</label>-->
 
 
+                  <client-only>
+                    <VDatePicker v-model="travelDate" mode="date" :min-date="today">
+                      <template #default="{ togglePopover }">
+                        <button
+                            class="is-input-ico peer text-left"
+                            @click="togglePopover"
+                        >
+
+                          <!--                        <span v-if="filters.created_start && filters.created_end">{{ filters.created_start+' to '+filters.created_end }}</span>-->
+                          <span v-if="travelDate">{{ moment(travelDate).format('YYYY-MM-DD') }}</span>
+                          <span class="text-gray-500" v-else>Tentative travel date</span>
+                          <span class="is-input-ico-label" >Inquire Date</span>
+
+                          <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                            </svg>
+
+                          </span>
+                        </button>
+
+                      </template>
+                    </VDatePicker>
+                  </client-only>
+
+                  </div>
+                  <div v-if="$v.travelDate.$error" class="text-xs text-red-500">Travel date required</div>
                 </div>
               </div>
 
               <div class="relative">
                 <div class="relative">
+                  <div class="relative">
                   <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
                   <input
                       type="email"
@@ -259,6 +292,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
                     </svg>
+                  </div>
+
                   </div>
 
                   <div v-if="$v.userEmail.$error" class="text-xs text-red-500">
@@ -371,6 +406,14 @@ import {useIpStore} from "~/stores/ip";
 import {Notification, NotificationGroup, notify} from "notiwind";
 import VueTailwindDatepicker from "vue-tailwind-datepicker";
 
+
+import moment from "moment-timezone";
+const { dataLayer } = useScriptGoogleTagManager()
+
+const today = new Date();
+
+const { $device } = useNuxtApp()
+
 const formStore = useFormStore()
 const ipStore = useIpStore()
 
@@ -419,16 +462,28 @@ const rules = {
   fullName: { required },
   phone: { required },
   userEmail: { required, email },
+  travelDate: { required },
   // comment: { required },
 };
 
-const $v = useVuelidate(rules, { fullName, phone, userEmail});
+const $v = useVuelidate(rules, { fullName, phone, userEmail, travelDate});
 
 const onClickSomething = () => {
   showModalProcess.value = false
 }
 
+const saveInquire = async (obj:any) => {
+  await formStore.saveInquire(obj)
+}
 
+function getBrowserName() {
+  if ($device.isChrome) return 'Chrome'
+  if ($device.isSafari) return 'Safari'
+  if ($device.isFirefox) return 'Firefox'
+  if ($device.isEdge) return 'Edge'
+  if ($device.isSamsung) return 'Samsung Browser'
+  return 'Unknown'
+}
 const handleSubmit = async () => {
 
   $v.value.$validate();
@@ -449,11 +504,18 @@ const handleSubmit = async () => {
 
       el_nombre: fullName.value,
       el_email: userEmail.value,
-      el_fecha: formStore.travelDate,
+      el_fecha: travelDate.value ? moment(travelDate.value).format('YYYY-MM-DD') : null,
       el_telefono: phone.value,
       el_textarea: comment.value,
 
-      country: geoIp.value.country+" "+geoIp.value.country_calling_code
+      country: geoIp.value.country+" "+geoIp.value.country_calling_code,
+      codigo_pais: geoIp.value.country+" "+geoIp.value.country_calling_code,
+
+      producto: "gotoecuador.com",
+      device: $device.isMobile ? 'Mobile' : $device.isTablet ? 'Tablet' : 'Desktop',
+      browser: getBrowserName(),
+      origen: "Web",
+      inquire_date: moment().tz('America/Lima').format('YYYY-MM-DD HH:mm:ss')
     }
 
     dataLayer.push({
@@ -473,9 +535,10 @@ const handleSubmit = async () => {
     await formStore.getInquire(obj).then((res) => {
       try {
         if (res){
+          saveInquire(obj)
           showLoader.value = false
 
-          formStore.travelDate = []
+          travelDate.value = []
           traveller.value = ""
           hotel.value = []
           formStore.destination = []
@@ -507,7 +570,7 @@ const handleSubmit = async () => {
       showLoader.value = false
       formStore.showModalInquireGlobal = false
 
-      formStore.travelDate = ''
+      travelDate.value = []
       traveller.value = ""
       hotel.value = []
       formStore.destination = []
