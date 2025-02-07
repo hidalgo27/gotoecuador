@@ -660,15 +660,15 @@ onMounted(async () => {
         </div>
 
         <div class="fixed bottom-0 mb-20 right-0 z-40 py-6 px-7 sm:inline-flex md:mb-0">
-          <a :href="'https://wa.me/12024911478?text=I%20would%20like%20a%20quote%20for%20the%20package: '+packages.titulo" target="_blank" rel="noopener noreferrer">
+          <a :href="'https://wa.me/51922300244?text=I%20would%20like%20a%20quote%20for%20the%20package: '+packages.titulo" target="_blank" rel="noopener noreferrer">
             <span class="flex relative h-10 w-10">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"></span>
             </span>
           </a>
-          <!--        <a href="https://wa.me/12024911478?text=Deseo%20una%20cotización%20del%20paquete:" target="_blank" rel="noopener noreferrer">Enviar mensaje</a>-->
+          <!--        <a href="https://wa.me/51922300244?text=Deseo%20una%20cotización%20del%20paquete:" target="_blank" rel="noopener noreferrer">Enviar mensaje</a>-->
         </div>
         <div class="fixed bottom-0 mb-20 right-0 z-40 py-5 px-6 sm:inline-flex md:mb-0">
-          <a :href="'https://wa.me/12024911478?text=I%20would%20like%20a%20quote%20for%20the%20package: '+packages.titulo" target="_blank" rel="noopener noreferrer" class="bg-white rounded-full">
+          <a :href="'https://wa.me/51922300244?text=I%20would%20like%20a%20quote%20for%20the%20package: '+packages.titulo" target="_blank" rel="noopener noreferrer" class="bg-white rounded-full">
             <nuxt-img src="/icons/whatsapp.svg" alt="" class="w-12"></nuxt-img>
           </a>
         </div>

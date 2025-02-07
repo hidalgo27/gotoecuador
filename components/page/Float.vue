@@ -10,14 +10,14 @@
     </div>
 
     <div class="fixed bottom-0 mb-20 right-0 z-40 py-6 px-7 sm:inline-flex md:mb-0">
-      <a href="https://api.whatsapp.com/send?phone=12024911478" target="_blank">
+      <a href="https://api.whatsapp.com/send?phone=51922300244" target="_blank">
             <span class="flex relative h-10 w-10">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"></span>
             </span>
       </a>
     </div>
     <div class="fixed bottom-0 mb-20 right-0 z-40 py-5 px-6 sm:inline-flex md:mb-0">
-      <a href="https://api.whatsapp.com/send?phone=12024911478" target="_blank" class="bg-white rounded-full">
+      <a href="https://api.whatsapp.com/send?phone=51922300244" target="_blank" class="bg-white rounded-full">
         <nuxt-img src="/icons/whatsapp.svg" alt="" class="w-12"></nuxt-img>
       </a>
     </div>

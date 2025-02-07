@@ -40,7 +40,7 @@
     </div>
     <div class="col-span-4 text-center text-gray-800  mt-4 ">
       <p class="flex items-center gap-1 justify-center">Plan your trip to Ecuador with a free video call from an expert! <nuxt-link to="#"><nuxt-img src="/icons/meet.svg" class="h-8 w-8"></nuxt-img></nuxt-link></p>
-      <p class="flex items-center gap-1 justify-center">Or talk to an expert right now to start making plans for your fully customized trip <nuxt-link to="https://api.whatsapp.com/send?phone=12024911478" target="_blank"><nuxt-img src="/icons/whatsapp.svg" class="h-6 w-6"></nuxt-img></nuxt-link></p>
+      <p class="flex items-center gap-1 justify-center">Or talk to an expert right now to start making plans for your fully customized trip <nuxt-link to="https://api.whatsapp.com/send?phone=51922300244" target="_blank"><nuxt-img src="/icons/whatsapp.svg" class="h-6 w-6"></nuxt-img></nuxt-link></p>
     </div>
   </section>
 
