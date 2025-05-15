@@ -161,7 +161,7 @@ const handleSubmit = async () => {
           await saveInquire(obj, obj2)
           showLoader.value = false
 
-          formStore.titlePackages = ''
+
           travelDate.value = []
           traveller.value = ""
           hotel.value = []
