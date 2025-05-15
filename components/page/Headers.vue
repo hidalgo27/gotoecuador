@@ -26,6 +26,7 @@
         <!--      <nuxt-link to="/#top-12" class="flex gap-2 items-center"><img src="/icons/star.svg"> Top tours</nuxt-link>-->
         <!--      <nuxt-link to="/reviews" class="flex gap-2 items-center"><img src="/icons/search.svg"> Reviews</nuxt-link>-->
 
+        <client-only>
         <VDropdown>
           <button class="menu-list flex items-center gap-1">
             About us
@@ -46,6 +47,7 @@
             </div>
           </template>
         </VDropdown>
+        </client-only>
         <nuxt-link to="/reviews" class="menu-list" active-class="active">Reviews</nuxt-link>
 
       </nav>
@@ -82,6 +84,7 @@
 
 
 
+        <client-only>
           <VDropdown>
             <button class=" flex items-center justify-end  w-full gap-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,6 +103,7 @@
               </div>
             </template>
           </VDropdown>
+        </client-only>
 
 
 <!--        <div class="cursor-pointer flex items-center" >-->

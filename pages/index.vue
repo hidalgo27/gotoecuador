@@ -229,7 +229,9 @@
 
   <section class="container">
     <div class=" mb-12">
+      <client-only>
       <div class="elfsight-app-5eb4043b-fced-4876-890c-bcac70bb6720" data-elfsight-app-lazy></div>
+      </client-only>
     </div>
   </section>
 

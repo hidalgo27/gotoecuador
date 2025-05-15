@@ -10,6 +10,7 @@ const formStore = useFormStore()
 // const formStore = usePackageStore()
 
 import moment from "moment-timezone";
+import TelInput from "~/components/form/TelInput.vue";
 const { dataLayer } = useScriptGoogleTagManager()
 const { $device } = useNuxtApp()
 
@@ -20,6 +21,9 @@ const today = new Date();
 const package_title = ref()
 
 const showLoader = ref(false)
+
+const country_code2 = ref('')
+const country2 = ref('')
 
 const travelDate = ref()
 const traveller = ref()
@@ -59,8 +63,15 @@ const rules = {
 
 const $v = useVuelidate(rules, { fullName, phone, userEmail, travelDate});
 
-const saveInquire = async (obj:any) => {
-  await formStore.saveInquire(obj)
+
+const saveInquire = async (obj: any, obj2: any) => {
+  try {
+    await formStore.saveInquire(obj)
+    await formStore.saveLead(obj2)
+  } catch (error) {
+    console.error("Error al guardar inquire o lead:", error)
+    throw error
+  }
 }
 
 function getBrowserName() {
@@ -98,9 +109,8 @@ const handleSubmit = async () => {
       el_telefono: phone.value,
       el_textarea: comment.value,
 
-      country: geoIp.value.country+" "+geoIp.value.country_calling_code,
-
-      codigo_pais: geoIp.value.country+" "+geoIp.value.country_calling_code,
+      country: country2.value,
+      codigo_pais: country_code2.value,
 
       producto: "gotoecuador.com",
       device: $device.isMobile ? 'Mobile' : $device.isTablet ? 'Tablet' : 'Desktop',
@@ -108,6 +118,28 @@ const handleSubmit = async () => {
       origen: "Web",
       inquire_date: moment().tz('America/Lima').format('YYYY-MM-DD HH:mm:ss')
 
+    }
+
+    const obj2 = {
+      product_id: 6,
+      package: formStore.titlePackages,
+      hotel_category: hotel.value,
+      destinations: formStore.destination,
+      passengers: String(traveller.value),
+      // duration: '',
+      travel_date: travelDate.value ? moment(travelDate.value).format('YYYY-MM-DD') : null,
+      country: country2.value,
+      country_code: country_code2.value,
+      device: $device.isMobile ? 'Mobile' : $device.isTablet ? 'Tablet' : 'Desktop',
+      origin: 'Web',
+      browser: getBrowserName(),
+      name: fullName.value,
+      email: userEmail.value,
+      phone: phone.value,
+      comment: comment.value,
+      initial_price: 0,
+      inquiry_date: moment().tz('America/Lima').format('YYYY-MM-DD HH:mm:ss'),
+      dialCode: ''
     }
 
     dataLayer.push({
@@ -123,42 +155,48 @@ const handleSubmit = async () => {
       'NumberTravelers': traveller.value,
     });
 
-    await formStore.getInquire(obj).then((res) => {
-      if (res){
-        saveInquire(obj)
-        showLoader.value = false
+    await formStore.getInquire(obj).then(async (res) => {
+      try {
+        if (res){
+          await saveInquire(obj, obj2)
+          showLoader.value = false
 
-        travelDate.value = []
-        traveller.value = ""
-        hotel.value = []
-        formStore.destination = []
+          formStore.titlePackages = ''
+          travelDate.value = []
+          traveller.value = ""
+          hotel.value = []
+          formStore.destination = []
 
-        fullName.value = ""
-        phone.value = ""
-        userEmail.value = ""
-        comment.value = ""
-        formStore.showModalItinerary = false
-        formStore.$reset()
+          fullName.value = ""
+          phone.value = ""
+          userEmail.value = ""
+          comment.value = ""
+          formStore.showModalItinerary = false
+          formStore.$reset()
 
-        $v.value.$reset()
+          $v.value.$reset()
 
-        notify({
-          group: "foo",
-          title: 'Well done',
-          type: "success",
-          text: "Your trip has been successfully created 🙂",
-        }, 4000) // 4s
+          notify({
+            group: "foo",
+            title: 'Well done',
+            type: "success",
+            text: "Your trip has been successfully created 🙂",
+          }, 4000) // 4s
 
-      }else{
-        showLoader.value = false
-        formStore.showModalItinerary = false
-        notify({
-          group: "foo",
-          title: 'Error',
-          type: "error",
-          text: "Error :(",
-        }, 4000) // 4s
+        }else{
+          showLoader.value = false
+          formStore.showModalItinerary = false
+          notify({
+            group: "foo",
+            title: 'Error',
+            type: "error",
+            text: "Error :(",
+          }, 4000) // 4s
+        }
+      }catch (error){
+        console.log(error)
       }
+
     }).catch((err) => {
       showLoader.value = false
       formStore.showModalItinerary = false
@@ -207,47 +245,33 @@ const getPais = async () => {
   // }
 }
 
-const getIp = async () => {
-  const res = await ipStore.getIp()
-  geoIp.value = res
-  // if (res.token) {
-  //   policyStore['tokenLogin'] = res.token
-  //   loadingUser.value = false
-  // }
+// const getIp = async () => {
+//   const res = await ipStore.getIp()
+//   geoIp.value = res
+//   // if (res.token) {
+//   //   policyStore['tokenLogin'] = res.token
+//   //   loadingUser.value = false
+//   // }
+// }
+const phoneError = ref(false)
+
+const handlePhoneChange = ({ number, isValid, country, country_code, dialCode }) => {
+  // console.log(number, isValid, country, country_code, dialCode)
+  phone.value = number
+
+  country2.value = String(country)
+
+  country_code2.value = dialCode+' +'+country_code
+
+  phoneError.value = !isValid
 }
 
-
 onMounted(async () => {
-  await getIp()
+  // await getIp()
 
   await getPais()
 
   package_title.value = formStore.titlePackages
-
-  if (process.client) {
-    // @ts-ignore
-    import('intl-tel-input/build/js/intlTelInput.min.js').then((module) => {
-      const intlTelInput = module.default;
-      if (phoneInputRef.value) {
-
-        // if (res.token) {
-        //   policyStore['tokenLogin'] = res.token
-        //   loadingUser.value = false
-        // }
-
-        intlTelInput(phoneInputRef.value, {
-          initialCountry: "auto",
-          // @ts-ignore
-          geoIpLookup: function(callback) {
-            fetch("https://ipapi.co/json")
-                .then(function(res) { return res.json(); })
-                .then(function(data) { callback(data.country_code); })
-                .catch(function() { callback("us"); });
-          },
-        });
-      }
-    });
-  }
 
 })
 
@@ -269,9 +293,10 @@ onMounted(async () => {
             <div class="text-left mt-6">
               <h2 class="text-lg text-tertiary mb-5">Get a quote on this travel package:</h2>
 
+              <client-only>
               <h2 class="text-xl text-tertiary mb-5 bg-white text-center px-5 py-2 border border-gray-300 text-primary font-semibold rounded-sm">
                 {{ formStore.titlePackages }}</h2>
-
+              </client-only>
               <h3 class="text-lg text-tertiary my-5">Hotel Category</h3>
               <div class="grid grid-cols-12 gap-6 my-3 overflow-x-scroll no-scrollbar focus:touch-pan-x">
                 <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm bg-gray-50">
@@ -378,28 +403,31 @@ onMounted(async () => {
                   </div>
 
                   <div class="grid grid-cols-2 gap-3">
-                    <div class="relative">
+<!--                    <div class="relative">-->
+<!--                      <div class="relative">-->
+<!--                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>-->
+<!--                      <input-->
+<!--                          type="text"-->
+<!--                          class="is-input-ico peer"-->
+<!--                          placeholder=" "-->
+<!--                          autocomplete="off"-->
+<!--                          v-model="phone"-->
+<!--                          ref="phoneInputRef"-->
+<!--                          id="phoneNumber"-->
+<!--                      />-->
+<!--                      <label class="is-input-ico-label">Phone Number</label>-->
+<!--                      </div>-->
+<!--                      <div v-if="$v.phone.$error" class="text-xs text-red-500">Phone Number required</div>-->
+
+<!--                    </div>-->
+
+                    <div>
                       <div class="relative">
-                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
-                      <input
-                          type="text"
-                          class="is-input-ico peer"
-                          placeholder=" "
-                          autocomplete="off"
-                          v-model="phone"
-                          ref="phoneInputRef"
-                          id="phoneNumber"
-                      />
-                      <!--                    <input ref="phoneInputRef" v-model="phone" class="is-input-ico peer" placeholder=" " id="phoneNumber" type="tel" />-->
-                      <label class="is-input-ico-label">Phone Number</label>
-                      <!--                    <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">-->
-                      <!--                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">-->
-                      <!--                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />-->
-                      <!--                      </svg>-->
-                      <!--                    </div>-->
+                        <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
+                        <TelInput @updatePhone="handlePhoneChange"></TelInput>
                       </div>
                       <div v-if="$v.phone.$error" class="text-xs text-red-500">Phone Number required</div>
-
+                      <div v-if="phoneError" class="text-xs text-red-500">Número no válido</div>
                     </div>
 
 
@@ -524,6 +552,7 @@ onMounted(async () => {
         </div>
   </div>
 
+  <client-only>
   <NotificationGroup group="foo">
     <div class="fixed inset-0 flex z-50 items-start justify-end p-6 px-4 py-6 pointer-events-none">
       <div class="w-full max-w-sm">
@@ -579,7 +608,7 @@ onMounted(async () => {
       </div>
     </div>
   </NotificationGroup>
-
+  </client-only>
 </template>
 
 <style>
